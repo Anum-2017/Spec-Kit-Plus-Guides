@@ -18,7 +18,7 @@ Use this if you want to install Spec-Kit Plus with Python + pip.
 
 ➡️ [WITHOUT-PYTHON.md](WITHOUT-PYTHON.md)
 
-Use this if you want uv/uvx to manage the Python environment.
+Use this if you want uv to manage the Python environment.
 
 ---
 
