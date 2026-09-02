@@ -2,39 +2,37 @@
 
 ## Installation with Python
 
-This guide shows how to set up **Spec-Kit Plus with Claude Code** using a manually installed Python environment.
+This guide explains how to install and use **Spec-Kit Plus with Claude Code** using Python and pip.
 
 ---
 
 ## 📋 Requirements
 
-### Spec-Kit Plus
+You need:
 
 * Python 3.11 or higher
 * Git
-
-### Claude Code
-
-* Node.js / Claude Code prerequisites
-* Claude Code installed and available in PATH
+* Claude Code
 
 ---
 
-# Step 1: Install Python
+## Step 1: Install Python
 
-Download Python from the official Python website:
+Download Python from:
 
 https://www.python.org/downloads/
 
-During installation on Windows, make sure to enable:
+### Windows
+
+During installation, make sure to enable:
 
 ```text
-☑ Add Python to PATH
+Add Python to PATH
 ```
 
 ---
 
-# Step 2: Verify Python
+## Step 2: Verify Python
 
 Open a new PowerShell terminal:
 
@@ -42,85 +40,81 @@ Open a new PowerShell terminal:
 python --version
 ```
 
-You should see something similar to:
-
-```text
-Python 3.11.x
-```
-
-or a newer version.
-
-Also verify pip:
+Then verify pip:
 
 ```powershell
 python -m pip --version
 ```
 
+You should see the installed Python and pip versions.
+
 ---
 
-# Step 3: Verify Git
+## Step 3: Install Git
 
-Check that Git is installed:
+Check Git:
 
 ```powershell
 git --version
 ```
 
-If Git is not installed, install it from:
+If Git is not installed, download it from:
 
 https://git-scm.com/downloads
 
 ---
 
-# Step 4: Install Claude Code
+## Step 4: Install Claude Code
 
-Install Claude Code using npm:
+Install Claude Code:
 
 ```powershell
 npm install -g @anthropic-ai/claude-code
 ```
 
-Verify:
+Verify the installation:
 
 ```powershell
 claude --version
 ```
 
-If `claude` is not recognized, restart your terminal after installation.
+If `claude` is not recognized, restart your terminal and try again.
 
 ---
 
-# Step 5: Install Spec-Kit Plus
+## Step 5: Install Spec-Kit Plus
 
-Install Spec-Kit Plus with pip:
+Install Spec-Kit Plus using pip:
 
 ```powershell
 python -m pip install specifyplus
 ```
 
+Spec-Kit Plus also provides the `sp` command as a shorter alias.
+
 ---
 
-# Step 6: Verify Spec-Kit Plus
+## Step 6: Verify Spec-Kit Plus
 
-Check the installed version:
+Check the version:
 
 ```powershell
 specifyplus --version
 ```
 
-You can also use the short command:
+You can also run:
 
 ```powershell
 sp --version
 ```
 
-Run the health check:
+Check the required tools:
 
 ```powershell
 specifyplus check
 ```
 
-You can also use:
+Or:
 
 ```powershell
 sp check
@@ -128,7 +122,7 @@ sp check
 
 ---
 
-# Step 7: Create a New Project
+## Step 7: Create a New Project
 
 Move to the location where you want to create your project.
 
@@ -141,42 +135,28 @@ cd Desktop
 Create a new project:
 
 ```powershell
-specifyplus init my-ai-project --ai claude
+specifyplus init my-project --ai claude
 ```
 
-You can replace `my-ai-project` with your own project name.
-
-Example:
-
-```powershell
-specifyplus init whatsapp-ai-channel --ai claude
-```
-
----
-
-# Step 8: Enter the Project
-
-```powershell
-cd my-ai-project
-```
+You can replace `my-project` with any project name you want.
 
 For example:
 
 ```powershell
-cd whatsapp-ai-channel
+specifyplus init ecommerce-app --ai claude
 ```
 
 ---
 
-# Step 9: Verify the Project
+## Step 8: Enter the Project
 
-You should see a `.specify` directory inside the project.
-
-The project will contain the Spec-Kit Plus structure and agent-specific configuration.
+```powershell
+cd my-project
+```
 
 ---
 
-# Step 10: Start Claude Code
+## Step 9: Start Claude Code
 
 Run:
 
@@ -184,57 +164,59 @@ Run:
 claude
 ```
 
-Claude Code should start inside your project directory.
+Make sure you are inside the project directory before starting Claude Code.
 
 ---
 
-# Step 11: Start the Spec-Driven Development Workflow
+# 🚀 Spec-Driven Development Workflow
 
-Inside Claude Code, use the following commands.
+After Spec-Kit Plus is initialized, use these commands inside Claude Code.
 
-### 1. Constitution
+## 1. Constitution
 
 ```text
 /sp.constitution
 ```
 
-Define the project's principles, standards, and development rules.
+Define the project's governing principles, standards, and development guidelines.
 
 ---
 
-### 2. Specify
+## 2. Specify
 
 ```text
 /sp.specify
 ```
 
-Describe **what** you want to build.
+Describe **what you want to build** and **why**.
 
 Focus on requirements and user needs rather than implementation details.
 
 ---
 
-### 3. Clarify (Optional)
+## 3. Clarify
 
 ```text
 /sp.clarify
 ```
 
-Use this when requirements are unclear or additional clarification is needed.
+Use this when requirements need clarification.
+
+This step is optional but recommended when the specification is unclear.
 
 ---
 
-### 4. Plan
+## 4. Plan
 
 ```text
 /sp.plan
 ```
 
-Create the technical implementation plan.
+Create the technical implementation plan, architecture, and technology choices.
 
 ---
 
-### 5. Tasks
+## 5. Tasks
 
 ```text
 /sp.tasks
@@ -244,23 +226,25 @@ Break the implementation plan into actionable development tasks.
 
 ---
 
-### 6. Analyze (Optional / Recommended)
+## 6. Analyze
 
 ```text
 /sp.analyze
 ```
 
-Review the specifications, plan, and tasks for consistency and possible issues.
+Review the specification, plan, and tasks for consistency and coverage.
+
+This step is optional but recommended before implementation.
 
 ---
 
-### 7. Implement
+## 7. Implement
 
 ```text
 /sp.implement
 ```
 
-Execute the implementation tasks.
+Execute the generated tasks and build the project.
 
 ---
 
@@ -284,7 +268,7 @@ Execute the implementation tasks.
 
 ---
 
-# ✅ Quick Command Reference
+# ⚡ Quick Setup
 
 ```powershell
 python --version
@@ -300,9 +284,9 @@ specifyplus --version
 specifyplus check
 
 cd Desktop
-specifyplus init my-ai-project --ai claude
+specifyplus init my-project --ai claude
 
-cd my-ai-project
+cd my-project
 claude
 ```
 
@@ -320,10 +304,10 @@ Then inside Claude Code:
 
 ---
 
-## 🎯 Important
+## Important
 
-This method **manually installs Python** and uses Python's `pip` to install Spec-Kit Plus.
+This method requires Python to be **manually installed** and uses pip to install Spec-Kit Plus.
 
-If you don't want to manually install/manage Python, see:
+If you do not want to manually install/manage Python, use:
 
 **`WITHOUT-PYTHON.md`**
