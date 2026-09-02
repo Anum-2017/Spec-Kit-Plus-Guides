@@ -131,8 +131,6 @@ This method is useful when you want to run Spec-Kit Plus without maintaining a p
 
 # 🤖 Supported AI Agents
 
-Spec-Kit Plus supports multiple AI coding agents.
-
 This repository focuses on:
 
 | Agent       | Supported |
@@ -140,7 +138,7 @@ This repository focuses on:
 | Claude Code | ✅         |
 | OpenCode    | ✅         |
 
-The Spec-Kit Plus CLI includes both `claude` and `opencode` as supported AI options.
+Both agents can be selected during project initialization using the Spec-Kit Plus CLI.
 
 ---
 
@@ -279,13 +277,13 @@ It does **not** mean that Spec-Kit Plus itself has no Python dependency.
 
 ## Claude Code
 
-Claude Code supports Windows environments. Follow the current Claude Code documentation for the recommended Windows setup.
+Claude Code can be used on Windows environments.
 
 ---
 
 ## OpenCode
 
-OpenCode's official documentation recommends **WSL on Windows** for the best experience.
+For Windows users, **WSL is recommended** for the best experience.
 
 OpenCode can also be installed through npm:
 
@@ -298,8 +296,6 @@ Verify:
 ```powershell
 opencode --version
 ```
-
-For the latest Windows requirements and installation options, follow the official OpenCode documentation.
 
 ---
 
