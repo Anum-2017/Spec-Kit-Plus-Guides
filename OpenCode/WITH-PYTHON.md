@@ -1,66 +1,46 @@
-# 💻 Spec-Kit Plus + OpenCode
+# Spec-Kit Plus + OpenCode
 
-## 🐍 Setup with Python + pip
+## Installation with Python
 
-This guide explains how to install **Spec-Kit Plus with OpenCode using Python and pip**.
+This guide explains how to install and use **Spec-Kit Plus with OpenCode** using Python and pip.
 
 ---
 
-# 📋 Requirements
+## 📋 Requirements
 
 You need:
 
-* Python 3.11+
-* pip
+* Python 3.11 or higher
 * Git
 * OpenCode
-* Internet connection
 
 ---
 
-# 🪟 Windows Recommendation
+## Step 1: Install Python
 
-If you are using Windows, OpenCode officially recommends **WSL** for the best experience.
-
-You can read the official OpenCode Windows guide here:
-
-https://opencode.ai/docs
-
----
-
-# 1️⃣ Install Python
-
-Download:
+Download Python from:
 
 https://www.python.org/downloads/
 
-During installation enable:
+On Windows, enable:
 
 ```text
-☑ Add python.exe to PATH
+Add Python to PATH
 ```
 
-Then install Python.
+during installation.
 
 ---
 
-# 2️⃣ Verify Python
+## Step 2: Verify Python
+
+Open a new PowerShell terminal:
 
 ```powershell
 python --version
 ```
 
-You should have:
-
-```text
-Python 3.11+
-```
-
----
-
-# 3️⃣ Verify pip
-
-Use:
+Verify pip:
 
 ```powershell
 python -m pip --version
@@ -68,33 +48,23 @@ python -m pip --version
 
 ---
 
-# 4️⃣ Install Git
+## Step 3: Install Git
 
-Download:
-
-https://git-scm.com/downloads
-
-Verify:
+Check Git:
 
 ```powershell
 git --version
 ```
 
----
+If Git is not installed:
 
-# 5️⃣ Install OpenCode
-
-## Recommended on Windows: WSL
-
-If you are using WSL, install OpenCode inside your WSL environment using the official installation method.
-
-The official OpenCode documentation recommends WSL for Windows.
+https://git-scm.com/downloads
 
 ---
 
-## Alternative: npm
+## Step 4: Install OpenCode
 
-If you already have Node.js/npm:
+Install OpenCode with npm:
 
 ```powershell
 npm install -g opencode-ai
@@ -106,35 +76,37 @@ Verify:
 opencode --version
 ```
 
-OpenCode's official documentation lists npm as a Windows installation option.
+### Windows
+
+OpenCode recommends WSL for the best Windows experience. npm installation is also available on Windows.
 
 ---
 
-# 6️⃣ Install Spec-Kit Plus
+## Step 5: Install Spec-Kit Plus
 
-Run:
+Install Spec-Kit Plus:
 
 ```powershell
 python -m pip install specifyplus
 ```
 
-The current Spec-Kit Plus project supports pip installation.
-
 ---
 
-# 7️⃣ Verify Spec-Kit Plus
+## Step 6: Verify Spec-Kit Plus
+
+Check the version:
 
 ```powershell
 specifyplus --version
 ```
 
-or:
+Or:
 
 ```powershell
 sp --version
 ```
 
-Then:
+Run the health check:
 
 ```powershell
 specifyplus check
@@ -142,39 +114,33 @@ specifyplus check
 
 ---
 
-# 8️⃣ Create an OpenCode Project
+## Step 7: Create a New Project
 
-Move to your desired directory:
+Move to your desired location:
 
 ```powershell
 cd Desktop
 ```
 
-Create the project:
+Create a new OpenCode project:
 
 ```powershell
-specifyplus init my-opencode-project --ai opencode
+specifyplus init my-project --ai opencode
 ```
 
-The current CLI supports:
-
-```text
---ai opencode
-```
-
-for OpenCode.
+You can replace `my-project` with any project name.
 
 ---
 
-# 9️⃣ Enter the Project
+## Step 8: Enter the Project
 
 ```powershell
-cd my-opencode-project
+cd my-project
 ```
 
 ---
 
-# 🔟 Start OpenCode
+## Step 9: Start OpenCode
 
 ```powershell
 opencode
@@ -182,7 +148,9 @@ opencode
 
 ---
 
-# 🚀 Start Spec-Driven Development
+# 🚀 Spec-Driven Development Workflow
+
+Inside OpenCode:
 
 ## 1. Constitution
 
@@ -190,45 +158,19 @@ opencode
 /sp.constitution
 ```
 
-Example:
-
-```text
-Create project principles focused on clean architecture,
-security, testing, accessibility, performance,
-maintainability, and code quality.
-```
-
----
-
-## 2. Specification
+## 2. Specify
 
 ```text
 /sp.specify
 ```
 
-Example:
-
-```text
-Build an e-commerce application.
-
-Users should be able to browse products,
-search products, add products to a shopping cart,
-and place orders.
-
-Administrators should manage products and orders.
-```
-
----
-
-## 3. Clarify - Optional
+## 3. Clarify
 
 ```text
 /sp.clarify
 ```
 
-Use this when requirements need clarification.
-
----
+Optional, but recommended when requirements need clarification.
 
 ## 4. Plan
 
@@ -236,33 +178,19 @@ Use this when requirements need clarification.
 /sp.plan
 ```
 
-Example:
-
-```text
-Use Next.js, TypeScript, Tailwind CSS,
-Prisma, and PostgreSQL.
-
-Use secure authentication,
-server-side validation, and reusable components.
-```
-
----
-
 ## 5. Tasks
 
 ```text
 /sp.tasks
 ```
 
----
-
-## 6. Analyze - Optional
+## 6. Analyze
 
 ```text
 /sp.analyze
 ```
 
----
+Optional, but recommended before implementation.
 
 ## 7. Implement
 
@@ -279,96 +207,59 @@ server-side validation, and reusable components.
         ↓
 /sp.specify
         ↓
-/sp.clarify       ← optional
+/sp.clarify       ← Optional
         ↓
 /sp.plan
         ↓
 /sp.tasks
         ↓
-/sp.analyze       ← optional
+/sp.analyze       ← Optional / Recommended
         ↓
 /sp.implement
 ```
 
 ---
 
-# 🧪 Final Verification
-
-Run:
+# ⚡ Quick Setup
 
 ```powershell
 python --version
 python -m pip --version
 git --version
+
+npm install -g opencode-ai
 opencode --version
+
+python -m pip install specifyplus
+
 specifyplus --version
 specifyplus check
+
+cd Desktop
+specifyplus init my-project --ai opencode
+
+cd my-project
+opencode
 ```
 
----
-
-# 🛠️ Troubleshooting
-
-## OpenCode is not recognized
-
-Check:
-
-```powershell
-opencode --version
-```
-
-If using npm:
-
-```powershell
-npm install -g opencode-ai
-```
-
----
-
-## OpenCode on Windows is giving compatibility problems
-
-Use WSL.
-
-The official OpenCode documentation recommends WSL for Windows.
-
----
-
-## `specifyplus` is not recognized
-
-Run:
-
-```powershell
-python -m pip install -U specifyplus
-```
-
-Then reopen your terminal.
-
----
-
-## Spec-Kit Plus cannot detect OpenCode
-
-Use:
-
-```powershell
-specifyplus init my-opencode-project --ai opencode --ignore-agent-tools
-```
-
----
-
-# ✅ Done!
-
-Your:
+Then:
 
 ```text
-Python
-   ↓
-pip
-   ↓
-Spec-Kit Plus
-   ↓
-OpenCode
-   ↓
-Spec-Driven Development
+/sp.constitution
+/sp.specify
+/sp.clarify
+/sp.plan
+/sp.tasks
+/sp.analyze
+/sp.implement
 ```
 
-environment is ready.
+---
+
+## Important
+
+This method manually installs Python and uses pip to install Spec-Kit Plus.
+
+If you do not want to manually install/manage Python, use:
+
+**`WITHOUT-PYTHON.md`**
