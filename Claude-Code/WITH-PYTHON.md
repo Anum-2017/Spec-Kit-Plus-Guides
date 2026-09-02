@@ -1,8 +1,8 @@
 # 🤖 Spec-Kit Plus + Claude Code
 
-## 🐍 Installation with Python + pip
+## 🐍 Setup with Python + pip
 
-This guide explains how to install and configure **Spec-Kit Plus with Claude Code using Python and pip on Windows**.
+This guide explains how to install **Spec-Kit Plus with Claude Code using Python and pip on Windows**.
 
 ---
 
@@ -14,26 +14,27 @@ You need:
 * Python 3.11+
 * pip
 * Git
+* Node.js 18+
 * Claude Code
 * Internet connection
 
-Spec-Kit Plus currently lists Python 3.11+ and Git as requirements.
+Spec-Kit Plus requires Python 3.11+ and Git. Claude Code currently requires Node.js 18+.
 
 ---
 
 # 1️⃣ Install Python
 
-Download Python from:
+Download Python:
 
 https://www.python.org/downloads/
 
-During installation, make sure you enable:
+During installation, enable:
 
 ```text
 ☑ Add python.exe to PATH
 ```
 
-Then click:
+Then select:
 
 ```text
 Install Now
@@ -43,35 +44,29 @@ Install Now
 
 # 2️⃣ Verify Python
 
-Open **PowerShell**:
+Open PowerShell:
 
 ```powershell
 python --version
 ```
 
-Expected:
+You should get something similar to:
 
 ```text
 Python 3.11.x
 ```
 
-or a newer version.
+or newer.
 
 ---
 
 # 3️⃣ Verify pip
 
-Run:
-
-```powershell
-pip --version
-```
-
-If `pip` is not recognized, use:
-
 ```powershell
 python -m pip --version
 ```
+
+Using `python -m pip` is recommended because it makes sure pip is associated with the Python installation you are using.
 
 ---
 
@@ -81,7 +76,7 @@ Download Git:
 
 https://git-scm.com/downloads
 
-After installation, verify:
+Verify:
 
 ```powershell
 git --version
@@ -89,39 +84,85 @@ git --version
 
 ---
 
-# 5️⃣ Install Claude Code
+# 5️⃣ Install Node.js
 
-Install Claude Code using the current official Claude Code installation method.
+Claude Code currently requires Node.js 18+.
 
-Then verify:
+Download Node.js:
+
+https://nodejs.org/
+
+Verify:
+
+```powershell
+node --version
+```
+
+and:
+
+```powershell
+npm --version
+```
+
+---
+
+# 6️⃣ Install Claude Code
+
+Install Claude Code with npm:
+
+```powershell
+npm install -g @anthropic-ai/claude-code
+```
+
+Do **not** use:
+
+```powershell
+sudo npm install -g @anthropic-ai/claude-code
+```
+
+That command is for Unix-like systems and is unnecessary on Windows.
+
+Anthropic's official documentation currently lists the npm installation command above.
+
+---
+
+# 7️⃣ Verify Claude Code
+
+Run:
 
 ```powershell
 claude --version
 ```
 
-If the version appears, Claude Code is available in your terminal.
+You can also run:
+
+```powershell
+claude doctor
+```
+
+`claude doctor` can help diagnose the installation.
 
 ---
 
-# 6️⃣ Install Spec-Kit Plus
+# 8️⃣ Install Spec-Kit Plus
 
 Run:
-
-```powershell
-pip install specifyplus
-```
-
-If you want to explicitly use Python's pip:
 
 ```powershell
 python -m pip install specifyplus
 ```
 
-The current Spec-Kit Plus README documents `pip install specifyplus` as a persistent installation method.
+The current Spec-Kit Plus project supports:
+
+```powershell
+pip install specifyplus
+```
+
+as a persistent installation method.
 
 ---
 
-# 7️⃣ Verify Spec-Kit Plus
+# 9️⃣ Verify Spec-Kit Plus
 
 Run:
 
@@ -129,13 +170,13 @@ Run:
 specifyplus --version
 ```
 
-You can also use:
+You can also use the short command:
 
 ```powershell
 sp --version
 ```
 
-Then check the environment:
+Then check your environment:
 
 ```powershell
 specifyplus check
@@ -147,13 +188,11 @@ or:
 sp check
 ```
 
-The `check` command checks for supported development tools, including Claude Code and Git.
-
 ---
 
-# 8️⃣ Create a New Project
+# 🔟 Create a New Project
 
-Go to the folder where you want to create your project.
+Move to the folder where you want to create the project.
 
 Example:
 
@@ -161,16 +200,10 @@ Example:
 cd Desktop
 ```
 
-Create a new Spec-Kit Plus project:
+Create a new project:
 
 ```powershell
 specifyplus init my-ai-project --ai claude
-```
-
-You can also use:
-
-```powershell
-sp init my-ai-project --ai claude
 ```
 
 The current CLI supports:
@@ -183,7 +216,7 @@ for Claude Code.
 
 ---
 
-# 9️⃣ Enter the Project
+# 1️⃣1️⃣ Enter the Project
 
 ```powershell
 cd my-ai-project
@@ -191,33 +224,17 @@ cd my-ai-project
 
 ---
 
-# 🔟 Start Claude Code
+# 1️⃣2️⃣ Start Claude Code
 
 ```powershell
 claude
 ```
 
-Claude Code should now work with the Spec-Kit Plus project configuration.
-
----
-
-# 🧪 If Claude Code Detection Fails
-
-You can initialize the project while skipping the AI-agent tool check:
-
-```powershell
-specifyplus init my-ai-project --ai claude --ignore-agent-tools
-```
-
-The current CLI provides `--ignore-agent-tools` specifically to skip AI-agent tool detection.
+If this is your first time using Claude Code, follow the authentication instructions shown in the terminal.
 
 ---
 
 # 🚀 Start Spec-Driven Development
-
-Once the project is initialized, use these commands inside Claude Code.
-
----
 
 ## Step 1: Constitution
 
@@ -228,14 +245,14 @@ Once the project is initialized, use these commands inside Claude Code.
 Example:
 
 ```text
-Create project principles focused on clean code,
-security, testing, accessibility, performance,
-maintainability, and consistent user experience.
+Create project principles focused on code quality,
+testing standards, security, accessibility,
+performance, and maintainability.
 ```
 
 ---
 
-## Step 2: Specify
+## Step 2: Specification
 
 ```text
 /sp.specify
@@ -246,8 +263,8 @@ Example:
 ```text
 Build a student management system.
 
-Administrators should be able to create, update,
-delete, and view students.
+Administrators should be able to create,
+update, delete, and view students.
 
 The system should also manage courses,
 attendance, grades, and dashboard analytics.
@@ -255,19 +272,17 @@ attendance, grades, and dashboard analytics.
 
 Focus on **what** you want to build and **why**.
 
-Do not define the technical stack here.
-
 ---
 
-## Step 3: Clarify
+## Step 3: Clarify - Optional
 
 ```text
 /sp.clarify
 ```
 
-Use this to identify unclear requirements before creating the technical plan.
+Use this if your requirements are unclear or incomplete.
 
-This is recommended before `/sp.plan`.
+It is recommended before `/sp.plan`.
 
 ---
 
@@ -283,11 +298,9 @@ Example:
 Use Next.js, TypeScript, Tailwind CSS,
 Prisma, and PostgreSQL.
 
-Use a scalable architecture with secure
-authentication, validation, and reusable components.
+Use secure authentication,
+server-side validation, and reusable components.
 ```
-
-This is where you provide the technical implementation details.
 
 ---
 
@@ -297,11 +310,11 @@ This is where you provide the technical implementation details.
 /sp.tasks
 ```
 
-This converts the plan into actionable development tasks.
+This creates actionable development tasks.
 
 ---
 
-## Step 6: Analyze
+## Step 6: Analyze - Optional
 
 ```text
 /sp.analyze
@@ -332,26 +345,18 @@ Claude Code will execute the generated tasks.
 # 🔄 Complete Workflow
 
 ```text
-Python
-   ↓
-pip
-   ↓
-Spec-Kit Plus
-   ↓
-Claude Code
-   ↓
 /sp.constitution
-   ↓
+        ↓
 /sp.specify
-   ↓
-/sp.clarify
-   ↓
+        ↓
+/sp.clarify       ← optional
+        ↓
 /sp.plan
-   ↓
+        ↓
 /sp.tasks
-   ↓
-/sp.analyze
-   ↓
+        ↓
+/sp.analyze       ← optional
+        ↓
 /sp.implement
 ```
 
@@ -359,24 +364,24 @@ Claude Code
 
 # 🧪 Final Verification
 
-Run these commands:
+Run:
 
 ```powershell
 python --version
-pip --version
+python -m pip --version
 git --version
+node --version
+npm --version
 claude --version
 specifyplus --version
 specifyplus check
 ```
 
-If they work, your setup is ready.
-
 ---
 
 # 🛠️ Troubleshooting
 
-## Python not recognized
+## `python` is not recognized
 
 Reinstall Python and enable:
 
@@ -384,21 +389,11 @@ Reinstall Python and enable:
 Add python.exe to PATH
 ```
 
-Then restart PowerShell.
+Then reopen PowerShell.
 
 ---
 
-## pip not recognized
-
-Use:
-
-```powershell
-python -m pip install specifyplus
-```
-
----
-
-## specifyplus not recognized
+## `specifyplus` is not recognized
 
 Try:
 
@@ -410,30 +405,52 @@ Then reopen PowerShell.
 
 ---
 
-## Claude not recognized
+## `claude` is not recognized
 
 Check:
 
 ```powershell
-claude --version
+npm --version
 ```
 
-If it fails, complete the Claude Code installation first.
+Then reinstall Claude Code:
+
+```powershell
+npm install -g @anthropic-ai/claude-code
+```
+
+---
+
+## Claude Code cannot run correctly on Windows
+
+Consider using **WSL** or Git Bash. Anthropic officially supports Windows through WSL and Git for Windows/Git Bash.
 
 ---
 
 ## Spec-Kit Plus cannot detect Claude
 
-Use:
+You can skip agent detection:
 
 ```powershell
 specifyplus init my-ai-project --ai claude --ignore-agent-tools
 ```
 
+The current CLI provides `--ignore-agent-tools` for this purpose.
+
 ---
 
 # ✅ Done!
 
-Your **Spec-Kit Plus + Claude Code + Python** environment is ready.
+You now have:
 
-Now you can build projects using a structured Spec-Driven Development workflow.
+```text
+Python
+   ↓
+pip
+   ↓
+Spec-Kit Plus
+   ↓
+Claude Code
+   ↓
+Spec-Driven Development
+```
