@@ -1,8 +1,8 @@
 # 💻 Spec-Kit Plus + OpenCode
 
-## 🐍 Installation with Python + pip
+## 🐍 Setup with Python + pip
 
-This guide explains how to install **Spec-Kit Plus with OpenCode using Python and pip on Windows**.
+This guide explains how to install **Spec-Kit Plus with OpenCode using Python and pip**.
 
 ---
 
@@ -10,14 +10,21 @@ This guide explains how to install **Spec-Kit Plus with OpenCode using Python an
 
 You need:
 
-* Windows
 * Python 3.11+
 * pip
 * Git
 * OpenCode
 * Internet connection
 
-Spec-Kit Plus currently lists Python 3.11+ and Git among its requirements.
+---
+
+# 🪟 Windows Recommendation
+
+If you are using Windows, OpenCode officially recommends **WSL** for the best experience.
+
+You can read the official OpenCode Windows guide here:
+
+https://opencode.ai/docs
 
 ---
 
@@ -33,39 +40,27 @@ During installation enable:
 ☑ Add python.exe to PATH
 ```
 
-Then click:
-
-```text
-Install Now
-```
+Then install Python.
 
 ---
 
 # 2️⃣ Verify Python
 
-Open PowerShell:
-
 ```powershell
 python --version
 ```
 
-Expected:
+You should have:
 
 ```text
-Python 3.11.x
+Python 3.11+
 ```
-
-or newer.
 
 ---
 
 # 3️⃣ Verify pip
 
-```powershell
-pip --version
-```
-
-If needed:
+Use:
 
 ```powershell
 python -m pip --version
@@ -89,15 +84,29 @@ git --version
 
 # 5️⃣ Install OpenCode
 
-Install OpenCode using its current official installation method.
+## Recommended on Windows: WSL
 
-Then verify:
+If you are using WSL, install OpenCode inside your WSL environment using the official installation method.
+
+The official OpenCode documentation recommends WSL for Windows.
+
+---
+
+## Alternative: npm
+
+If you already have Node.js/npm:
+
+```powershell
+npm install -g opencode-ai
+```
+
+Verify:
 
 ```powershell
 opencode --version
 ```
 
-The Spec-Kit Plus project recognizes `opencode` as a supported CLI-based AI agent.
+OpenCode's official documentation lists npm as a Windows installation option.
 
 ---
 
@@ -106,14 +115,10 @@ The Spec-Kit Plus project recognizes `opencode` as a supported CLI-based AI agen
 Run:
 
 ```powershell
-pip install specifyplus
-```
-
-Or:
-
-```powershell
 python -m pip install specifyplus
 ```
+
+The current Spec-Kit Plus project supports pip installation.
 
 ---
 
@@ -139,13 +144,13 @@ specifyplus check
 
 # 8️⃣ Create an OpenCode Project
 
-Go to your desired folder:
+Move to your desired directory:
 
 ```powershell
 cd Desktop
 ```
 
-Create a new project:
+Create the project:
 
 ```powershell
 specifyplus init my-opencode-project --ai opencode
@@ -174,18 +179,6 @@ cd my-opencode-project
 ```powershell
 opencode
 ```
-
----
-
-# 🧪 If OpenCode Detection Fails
-
-Use:
-
-```powershell
-specifyplus init my-opencode-project --ai opencode --ignore-agent-tools
-```
-
-This skips the AI-agent detection step.
 
 ---
 
@@ -227,17 +220,17 @@ Administrators should manage products and orders.
 
 ---
 
-## 3. Clarification
+## 3. Clarify - Optional
 
 ```text
 /sp.clarify
 ```
 
-Use this to resolve unclear requirements.
+Use this when requirements need clarification.
 
 ---
 
-## 4. Technical Plan
+## 4. Plan
 
 ```text
 /sp.plan
@@ -263,7 +256,7 @@ server-side validation, and reusable components.
 
 ---
 
-## 6. Analyze
+## 6. Analyze - Optional
 
 ```text
 /sp.analyze
@@ -282,26 +275,18 @@ server-side validation, and reusable components.
 # 🔄 Complete Workflow
 
 ```text
-Python
-   ↓
-pip
-   ↓
-Spec-Kit Plus
-   ↓
-OpenCode
-   ↓
 /sp.constitution
-   ↓
+        ↓
 /sp.specify
-   ↓
-/sp.clarify
-   ↓
+        ↓
+/sp.clarify       ← optional
+        ↓
 /sp.plan
-   ↓
+        ↓
 /sp.tasks
-   ↓
-/sp.analyze
-   ↓
+        ↓
+/sp.analyze       ← optional
+        ↓
 /sp.implement
 ```
 
@@ -313,7 +298,7 @@ Run:
 
 ```powershell
 python --version
-pip --version
+python -m pip --version
 git --version
 opencode --version
 specifyplus --version
@@ -324,29 +309,31 @@ specifyplus check
 
 # 🛠️ Troubleshooting
 
-## Python not recognized
+## OpenCode is not recognized
 
-Reinstall Python and enable:
-
-```text
-Add python.exe to PATH
-```
-
-Then restart PowerShell.
-
----
-
-## pip not recognized
-
-Use:
+Check:
 
 ```powershell
-python -m pip install specifyplus
+opencode --version
+```
+
+If using npm:
+
+```powershell
+npm install -g opencode-ai
 ```
 
 ---
 
-## specifyplus not recognized
+## OpenCode on Windows is giving compatibility problems
+
+Use WSL.
+
+The official OpenCode documentation recommends WSL for Windows.
+
+---
+
+## `specifyplus` is not recognized
 
 Run:
 
@@ -354,23 +341,11 @@ Run:
 python -m pip install -U specifyplus
 ```
 
-Then restart PowerShell.
+Then reopen your terminal.
 
 ---
 
-## OpenCode not recognized
-
-Run:
-
-```powershell
-opencode --version
-```
-
-If it fails, complete the OpenCode installation first.
-
----
-
-## OpenCode detection fails
+## Spec-Kit Plus cannot detect OpenCode
 
 Use:
 
@@ -382,4 +357,18 @@ specifyplus init my-opencode-project --ai opencode --ignore-agent-tools
 
 # ✅ Done!
 
-Your **Spec-Kit Plus + OpenCode + Python** environment is ready.
+Your:
+
+```text
+Python
+   ↓
+pip
+   ↓
+Spec-Kit Plus
+   ↓
+OpenCode
+   ↓
+Spec-Driven Development
+```
+
+environment is ready.
