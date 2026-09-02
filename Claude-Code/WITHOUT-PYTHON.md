@@ -382,6 +382,6 @@ This method uses `uv` to manage the Python environment and install Spec-Kit Plus
 
 You do **not** need to manually install Python.
 
-If you prefer to install Spec-Kit Plus directly into your Python environment using pip, use:
+If you prefer to install Spec-Kit Plus directly into your Python environment using pip, follow the:
 
-`WITH-PYTHON.md`
+**`WITH-PYTHON.md`** guide.
