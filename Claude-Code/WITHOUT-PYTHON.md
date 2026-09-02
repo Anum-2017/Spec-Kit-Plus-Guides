@@ -4,7 +4,7 @@
 
 This guide explains how to use **Spec-Kit Plus with Claude Code without manually installing Python**.
 
-> **Important:** "Without Python" means you don't manually install and manage Python yourself. `uv` manages the required Python environment.
+> **Important:** This does not mean Python is absent. `uv` manages the Python environment for you.
 
 ---
 
@@ -15,6 +15,7 @@ You need:
 * Windows
 * uv
 * Git
+* Node.js 18+
 * Claude Code
 * Internet connection
 
@@ -22,15 +23,16 @@ You need:
 
 # 1️⃣ Install uv
 
-Open **Windows PowerShell** and run:
+Open PowerShell and run:
 
 ```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-After installation, close PowerShell.
+After installation:
 
-Open a new PowerShell window.
+1. Close PowerShell.
+2. Open a new PowerShell window.
 
 ---
 
@@ -48,8 +50,6 @@ Then:
 uvx --version
 ```
 
-Both commands should return a version.
-
 ---
 
 # 3️⃣ Install Git
@@ -66,21 +66,49 @@ git --version
 
 ---
 
-# 4️⃣ Install Claude Code
+# 4️⃣ Install Node.js
 
-Install Claude Code using the current official Claude Code installation method.
+Claude Code requires Node.js 18+.
+
+Download:
+
+https://nodejs.org/
 
 Verify:
+
+```powershell
+node --version
+```
+
+and:
+
+```powershell
+npm --version
+```
+
+---
+
+# 5️⃣ Install Claude Code
+
+Run:
+
+```powershell
+npm install -g @anthropic-ai/claude-code
+```
+
+Then verify:
 
 ```powershell
 claude --version
 ```
 
+Anthropic currently documents npm as a standard Claude Code installation method.
+
 ---
 
-# 5️⃣ Test Spec-Kit Plus
+# 6️⃣ Test Spec-Kit Plus
 
-You don't need to permanently install the CLI.
+You do not need to install Spec-Kit Plus permanently.
 
 Run:
 
@@ -88,19 +116,19 @@ Run:
 uvx specifyplus --help
 ```
 
-The current Spec-Kit Plus README supports one-time usage through `uvx specifyplus`.
+The current Spec-Kit Plus README documents `uvx specifyplus` for one-time usage.
 
 ---
 
-# 6️⃣ Create a New Project
+# 7️⃣ Create a New Project
 
-Go to your desired directory:
+Go to the location where you want the project:
 
 ```powershell
 cd Desktop
 ```
 
-Create the project:
+Then:
 
 ```powershell
 uvx specifyplus init my-ai-project --ai claude
@@ -108,7 +136,7 @@ uvx specifyplus init my-ai-project --ai claude
 
 ---
 
-# 7️⃣ Enter the Project
+# 8️⃣ Enter the Project
 
 ```powershell
 cd my-ai-project
@@ -116,97 +144,57 @@ cd my-ai-project
 
 ---
 
-# 8️⃣ Start Claude Code
+# 9️⃣ Start Claude Code
 
 ```powershell
 claude
 ```
 
+Complete the authentication shown by Claude Code.
+
 ---
 
-# 9️⃣ If Claude Detection Fails
+# 🔄 Spec-Driven Development
 
 Use:
 
-```powershell
-uvx specifyplus init my-ai-project --ai claude --ignore-agent-tools
-```
-
-The `--ignore-agent-tools` option skips the AI-agent detection step.
-
----
-
-# 🚀 Spec-Driven Development Workflow
-
-Inside Claude Code:
-
-### 1. Constitution
-
 ```text
 /sp.constitution
 ```
 
-### 2. Specification
+then:
 
 ```text
 /sp.specify
 ```
 
-### 3. Clarification
+Optional:
 
 ```text
 /sp.clarify
 ```
 
-### 4. Technical Plan
+Then:
 
 ```text
 /sp.plan
 ```
 
-### 5. Tasks
+Then:
 
 ```text
 /sp.tasks
 ```
 
-### 6. Analysis
+Optional:
 
 ```text
 /sp.analyze
 ```
 
-### 7. Implementation
+Finally:
 
 ```text
-/sp.implement
-```
-
----
-
-# 🔄 Complete Workflow
-
-```text
-uv
- ↓
-uvx
- ↓
-Spec-Kit Plus
- ↓
-Claude Code
- ↓
-/sp.constitution
- ↓
-/sp.specify
- ↓
-/sp.clarify
- ↓
-/sp.plan
- ↓
-/sp.tasks
- ↓
-/sp.analyze
- ↓
 /sp.implement
 ```
 
@@ -220,29 +208,17 @@ Run:
 uv --version
 uvx --version
 git --version
+node --version
+npm --version
 claude --version
 uvx specifyplus --help
 ```
 
 ---
 
-# ⚠️ Why Use uvx?
-
-`uvx` allows you to run Spec-Kit Plus without permanently installing the CLI.
-
-For example:
-
-```powershell
-uvx specifyplus --help
-```
-
-The current documentation explicitly supports one-time usage through `uvx`.
-
----
-
 # 🛠️ Troubleshooting
 
-## uv not recognized
+## `uv` is not recognized
 
 Close PowerShell and open it again.
 
@@ -254,27 +230,52 @@ uv --version
 
 ---
 
-## uvx not recognized
+## `uvx` is not recognized
 
-Run:
+Check:
 
 ```powershell
 uv --version
 ```
 
-If uv is installed but the command is unavailable, restart Windows so PATH changes are loaded.
+If necessary, restart Windows so the PATH changes are loaded.
 
 ---
 
-## Claude not recognized
+## `claude` is not recognized
 
-Run:
+Check:
 
 ```powershell
-claude --version
+npm --version
 ```
 
-If it fails, complete the Claude Code installation.
+Then reinstall:
+
+```powershell
+npm install -g @anthropic-ai/claude-code
+```
+
+---
+
+## Spec-Kit Plus cannot detect Claude
+
+Use:
+
+```powershell
+uvx specifyplus init my-ai-project --ai claude --ignore-agent-tools
+```
+
+---
+
+# 🪟 Windows Recommendation
+
+For Claude Code on Windows, Anthropic supports:
+
+* WSL
+* Git Bash
+
+If native PowerShell causes issues, try Claude Code from WSL or Git Bash.
 
 ---
 
@@ -284,13 +285,13 @@ You now have:
 
 ```text
 uv
- +
+ ↓
 uvx
- +
+ ↓
 Spec-Kit Plus
- +
+ ↓
 Claude Code
- =
+ ↓
 Spec-Driven Development
 ```
 
