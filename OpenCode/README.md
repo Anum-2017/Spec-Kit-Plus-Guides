@@ -70,7 +70,7 @@ Optional:
 | I already have Python                   | [With Python](WITH-PYTHON.md)       |
 | I want pip installation                 | [With Python](WITH-PYTHON.md)       |
 | I don't want to manually install Python | [Without Python](WITHOUT-PYTHON.md) |
-| I want uv/uvx                           | [Without Python](WITHOUT-PYTHON.md) |
+| I want uv                               | [Without Python](WITHOUT-PYTHON.md) |
 
 ---
 
