@@ -19,7 +19,7 @@ The project uses the `specifyplus` or `sp` CLI commands.
 
 Instead of asking an AI agent to immediately write code, you first define the project's requirements and technical plan, then generate tasks and implement them.
 
-Official repository:
+### Official repository
 
 https://github.com/panaversity/spec-kit-plus
 
@@ -39,7 +39,7 @@ Install Spec-Kit Plus using Python and pip.
 
 ### ⚡ Claude Code + uv/uvx
 
-Use uv/uvx so you do not have to manually install Python.
+Use uv/uvx so you do not have to manually install and manage Python.
 
 ➡️ [Claude Code + uv/uvx](Claude-Code/WITHOUT-PYTHON.md)
 
@@ -55,7 +55,7 @@ Install Spec-Kit Plus using Python and pip.
 
 ### ⚡ OpenCode + uv/uvx
 
-Use uv/uvx so you do not have to manually install Python.
+Use uv/uvx so you do not have to manually install and manage Python.
 
 ➡️ [OpenCode + uv/uvx](OpenCode/WITHOUT-PYTHON.md)
 
@@ -63,22 +63,16 @@ Use uv/uvx so you do not have to manually install Python.
 
 # 📦 Spec-Kit Plus Installation Methods
 
-Spec-Kit Plus currently supports two main approaches.
+Spec-Kit Plus supports multiple installation approaches.
 
 ## Method 1: Persistent Installation
 
 Install the CLI once and use it from anywhere.
 
-### Using pip
+### Using Python + pip
 
 ```powershell
-pip install specifyplus
-```
-
-### Using uv
-
-```powershell
-uv tool install specifyplus
+python -m pip install specifyplus
 ```
 
 After installation, use:
@@ -93,11 +87,29 @@ or:
 sp --help
 ```
 
-The current Spec-Kit Plus README documents both `pip install specifyplus` and `uv tool install specifyplus`.
+### Using uv
+
+If you prefer to install the CLI through uv:
+
+```powershell
+uv tool install specifyplus
+```
+
+After installation:
+
+```powershell
+specifyplus --help
+```
+
+or:
+
+```powershell
+sp --help
+```
 
 ---
 
-## Method 2: One-Time Usage
+## Method 2: One-Time Usage with uvx
 
 You can run Spec-Kit Plus with `uvx` without installing the CLI permanently:
 
@@ -105,7 +117,7 @@ You can run Spec-Kit Plus with `uvx` without installing the CLI permanently:
 uvx specifyplus --help
 ```
 
-For example:
+You can also initialize a new project directly:
 
 ```powershell
 uvx specifyplus init my-project --ai claude
@@ -117,7 +129,7 @@ or:
 uvx specifyplus init my-project --ai opencode
 ```
 
-The current project documents `uvx specifyplus` and `uvx sp` for one-time usage.
+This method is useful when you want to run Spec-Kit Plus without maintaining a permanent CLI installation.
 
 ---
 
@@ -132,7 +144,7 @@ This repository focuses on:
 | Claude Code | ✅         |
 | OpenCode    | ✅         |
 
-The Spec-Kit Plus CLI currently includes both `claude` and `opencode` as supported AI options.
+The Spec-Kit Plus CLI includes both `claude` and `opencode` as supported AI options.
 
 ---
 
@@ -188,7 +200,7 @@ Break the technical plan into actionable development tasks.
 
 Execute the generated tasks and build the feature.
 
-These are the core commands documented by the current Spec-Kit Plus project.
+These are the **core commands** used in the Spec-Driven Development workflow.
 
 ---
 
@@ -271,12 +283,7 @@ It does **not** mean that Spec-Kit Plus itself has no Python dependency.
 
 ## Claude Code
 
-Claude Code supports Windows through:
-
-* WSL
-* Git Bash
-
-Anthropic's current documentation lists Windows support through WSL or Git for Windows/Git Bash.
+Claude Code supports Windows environments. Follow the current Claude Code documentation for the recommended Windows setup.
 
 ---
 
@@ -284,17 +291,19 @@ Anthropic's current documentation lists Windows support through WSL or Git for W
 
 OpenCode's official documentation recommends **WSL on Windows** for the best experience.
 
-Other Windows installation options include:
+OpenCode can also be installed through npm:
 
-```text
-npm
-Chocolatey
-Scoop
-Mise
-Docker
+```powershell
+npm install -g opencode-ai
 ```
 
-OpenCode's official documentation specifically recommends WSL for Windows.
+Verify:
+
+```powershell
+opencode --version
+```
+
+For the latest Windows requirements and installation options, follow the official OpenCode documentation.
 
 ---
 
@@ -306,12 +315,10 @@ Spec-Kit-Plus-Guides/
 ├── README.md
 │
 ├── Claude-Code/
-│   ├── README.md
 │   ├── WITH-PYTHON.md
 │   └── WITHOUT-PYTHON.md
 │
 └── OpenCode/
-    ├── README.md
     ├── WITH-PYTHON.md
     └── WITHOUT-PYTHON.md
 ```
@@ -345,17 +352,6 @@ Spec-Kit Plus
  ↓
 Claude Code / OpenCode
 ```
-
----
-
-# 🔗 Official Resources
-
-* [Spec-Kit Plus](https://github.com/panaversity/spec-kit-plus)
-* [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
-* [OpenCode Documentation](https://opencode.ai/docs)
-* [Python](https://www.python.org/)
-* [uv Documentation](https://docs.astral.sh/uv/)
-* [Git](https://git-scm.com/)
 
 ---
 
