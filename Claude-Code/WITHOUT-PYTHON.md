@@ -1,10 +1,10 @@
 # Spec-Kit Plus + Claude Code
 
-## Installation without Manually Installing Python
+## Installation Without Manually Installing Python
 
-This guide explains how to use **Spec-Kit Plus with Claude Code using `uv` and `uvx`**.
+This guide explains how to install and use **Spec-Kit Plus with Claude Code using uv**, without manually installing Python.
 
-> **Important:** "Without Python" means you do not need to manually install and manage Python yourself. `uv` manages the Python environment needed by the tool.
+> **Important:** "Without Python" means you do not need to manually install and manage Python yourself. `uv` manages the required Python environment automatically.
 
 ---
 
@@ -16,13 +16,11 @@ You need:
 * uv
 * Claude Code
 
-You do **not** need to manually install Python.
-
 ---
 
-## Step 1: Install Git
+# Step 1: Install Git
 
-Check whether Git is installed:
+Check whether Git is already installed:
 
 ```powershell
 git --version
@@ -32,9 +30,15 @@ If Git is not installed, download it from:
 
 https://git-scm.com/downloads
 
+After installation, restart PowerShell and verify again:
+
+```powershell
+git --version
+```
+
 ---
 
-## Step 2: Install uv
+# Step 2: Install uv
 
 On Windows PowerShell, run:
 
@@ -42,75 +46,103 @@ On Windows PowerShell, run:
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-After installation, close PowerShell and open a new terminal.
+After installation, close and reopen PowerShell.
 
 ---
 
-## Step 3: Verify uv
+# Step 3: Verify uv
 
-Check uv:
+Run:
 
 ```powershell
 uv --version
 ```
 
-Check uvx:
-
-```powershell
-uvx --version
-```
+You should see the installed uv version.
 
 ---
 
-## Step 4: Install Claude Code
+# Step 4: Install Claude Code
 
-Install Claude Code:
+On Windows PowerShell, install Claude Code using the official installer:
 
 ```powershell
-npm install -g @anthropic-ai/claude-code
+irm https://claude.ai/install.ps1 | iex
 ```
 
-Verify:
+Verify the installation:
 
 ```powershell
 claude --version
 ```
 
-If `claude` is not recognized, restart your terminal.
+If `claude` is not recognized, close and reopen your terminal.
+
+> **Alternative:** Claude Code can also be installed through npm. If you use npm, make sure the required Node.js version is installed.
 
 ---
 
-## Step 5: Test Spec-Kit Plus
+# Step 5: Install Spec-Kit Plus Using uv
 
-You can run Spec-Kit Plus directly through `uvx` without permanently installing it:
+Install Spec-Kit Plus as a standalone command-line tool:
 
 ```powershell
-uvx specifyplus --help
+uv tool install specifyplus
 ```
 
-If the help menu appears, Spec-Kit Plus is available.
+After installation, restart PowerShell if necessary.
 
 ---
 
-## Step 6: Create a New Project
+# Step 6: Verify Spec-Kit Plus
 
-Move to the location where you want your project:
+Check the Spec-Kit Plus version:
+
+```powershell
+specifyplus --version
+```
+
+You can also check the shorter `sp` command:
+
+```powershell
+sp --version
+```
+
+Run the environment check:
+
+```powershell
+specifyplus check
+```
+
+Or:
+
+```powershell
+sp check
+```
+
+---
+
+# Step 7: Create a New Project
+
+Move to the location where you want to create your project.
+
+For example:
 
 ```powershell
 cd Desktop
 ```
 
-Create a new project:
+Create a new Spec-Kit Plus project for Claude Code:
 
 ```powershell
-uvx specifyplus init my-project --ai claude
+specifyplus init my-project --ai claude
 ```
 
-You can replace `my-project` with any project name.
+Replace `my-project` with your desired project name.
 
 ---
 
-## Step 7: Enter the Project
+# Step 8: Enter the Project
 
 ```powershell
 cd my-project
@@ -118,29 +150,35 @@ cd my-project
 
 ---
 
-## Step 8: Start Claude Code
+# Step 9: Start Claude Code
+
+Run:
 
 ```powershell
 claude
 ```
 
+Make sure you are inside the project directory before starting Claude Code.
+
 ---
 
-## Step 9: If Claude Code Detection Fails
+# 🛠️ If Agent Detection Fails
 
-If Spec-Kit Plus cannot detect the Claude Code tools automatically, use:
+If Spec-Kit Plus cannot detect Claude Code automatically, use:
 
 ```powershell
-uvx specifyplus init my-project --ai claude --ignore-agent-tools
+specifyplus init my-project --ai claude --ignore-agent-tools
 ```
 
-Then enter the project:
+This skips agent-tool detection during initialization.
+
+After initialization, enter the project:
 
 ```powershell
 cd my-project
 ```
 
-And start Claude:
+Then start Claude Code:
 
 ```powershell
 claude
@@ -150,7 +188,7 @@ claude
 
 # 🚀 Spec-Driven Development Workflow
 
-Inside Claude Code:
+After the project is initialized, use the following commands inside Claude Code.
 
 ## 1. Constitution
 
@@ -158,11 +196,21 @@ Inside Claude Code:
 /sp.constitution
 ```
 
+Defines the project's principles, standards, and development guidelines.
+
+---
+
 ## 2. Specify
 
 ```text
 /sp.specify
 ```
+
+Defines what you want to build and the requirements of the project.
+
+Focus on **what** the system should do rather than implementation details.
+
+---
 
 ## 3. Clarify
 
@@ -170,7 +218,11 @@ Inside Claude Code:
 /sp.clarify
 ```
 
-Optional, but useful when requirements are unclear.
+Use this when requirements are unclear or incomplete.
+
+This step is optional but recommended when clarification is needed.
+
+---
 
 ## 4. Plan
 
@@ -178,11 +230,19 @@ Optional, but useful when requirements are unclear.
 /sp.plan
 ```
 
+Creates the technical implementation plan, architecture, and technology decisions.
+
+---
+
 ## 5. Tasks
 
 ```text
 /sp.tasks
 ```
+
+Breaks the implementation plan into smaller, actionable development tasks.
+
+---
 
 ## 6. Analyze
 
@@ -190,13 +250,19 @@ Optional, but useful when requirements are unclear.
 /sp.analyze
 ```
 
-Optional, but recommended before implementation.
+Reviews the specification, plan, and tasks for consistency and missing requirements.
+
+This step is optional but recommended before implementation.
+
+---
 
 ## 7. Implement
 
 ```text
 /sp.implement
 ```
+
+Executes the generated tasks and implements the project.
 
 ---
 
@@ -222,25 +288,70 @@ Optional, but recommended before implementation.
 
 # ⚡ Quick Setup
 
+Run these commands in PowerShell:
+
 ```powershell
 git --version
+```
 
+Install uv:
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+Close and reopen PowerShell, then:
+
+```powershell
 uv --version
-uvx --version
+```
 
-npm install -g @anthropic-ai/claude-code
+Install Claude Code:
+
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+
+Verify:
+
+```powershell
 claude --version
+```
 
-uvx specifyplus --help
+Install Spec-Kit Plus:
 
+```powershell
+uv tool install specifyplus
+```
+
+Verify:
+
+```powershell
+specifyplus --version
+sp --version
+specifyplus check
+```
+
+Create a new project:
+
+```powershell
 cd Desktop
-uvx specifyplus init my-project --ai claude
+specifyplus init my-project --ai claude
+```
 
+Enter the project:
+
+```powershell
 cd my-project
+```
+
+Start Claude Code:
+
+```powershell
 claude
 ```
 
-Then:
+Then inside Claude Code:
 
 ```text
 /sp.constitution
@@ -254,12 +365,23 @@ Then:
 
 ---
 
+# 📌 Difference Between the Two Claude Code Methods
+
+| Method         | Python Installation    | Spec-Kit Plus                       |
+| -------------- | ---------------------- | ----------------------------------- |
+| With Python    | Manually installed     | `python -m pip install specifyplus` |
+| Without Python | Not manually installed | `uv tool install specifyplus`       |
+
+Both methods create and use the same Spec-Kit Plus workflow.
+
+---
+
 ## Important
 
-This method does **not require you to manually install Python**.
+This method uses `uv` to manage the Python environment and install Spec-Kit Plus as a command-line tool.
 
-`uv`/`uvx` manages the Python environment required to run Spec-Kit Plus.
+You do **not** need to manually install Python.
 
-For the Python + pip method, see:
+If you prefer to install Spec-Kit Plus directly into your Python environment using pip, use:
 
-**`WITH-PYTHON.md`**
+`WITH-PYTHON.md`
