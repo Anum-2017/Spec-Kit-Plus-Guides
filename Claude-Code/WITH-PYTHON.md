@@ -66,10 +66,10 @@ https://git-scm.com/downloads
 
 ## Step 4: Install Claude Code
 
-Install Claude Code:
+On Windows PowerShell, install Claude Code using the official installer:
 
 ```powershell
-npm install -g @anthropic-ai/claude-code
+irm https://claude.ai/install.ps1 | iex
 ```
 
 Verify the installation:
@@ -78,7 +78,9 @@ Verify the installation:
 claude --version
 ```
 
-If `claude` is not recognized, restart your terminal and try again.
+If `claude` is not recognized, close and reopen your terminal.
+
+> **Alternative:** Claude Code can also be installed through npm. If you use npm, make sure the required Node.js version is installed.
 
 ---
 
@@ -182,7 +184,7 @@ Define the project's governing principles, standards, and development guidelines
 /sp.specify
 ```
 
-Describe **what you want to build** and **why**.
+Describe what you want to build and why.
 
 Focus on requirements and user needs rather than implementation details.
 
@@ -269,7 +271,7 @@ python --version
 python -m pip --version
 git --version
 
-npm install -g @anthropic-ai/claude-code
+irm https://claude.ai/install.ps1 | iex
 claude --version
 
 python -m pip install specifyplus
@@ -300,8 +302,8 @@ Then inside Claude Code:
 
 ## Important
 
-This method requires Python to be **manually installed** and uses pip to install Spec-Kit Plus.
+This method requires Python to be manually installed and uses pip to install Spec-Kit Plus.
 
-If you do not want to manually install/manage Python, use:
+If you do not want to manually install or manage Python, use:
 
-**`WITHOUT-PYTHON.md`**
+`WITHOUT-PYTHON.md`
