@@ -1,6 +1,6 @@
 # 🤖 Spec-Kit Plus + Claude Code
 
-This folder contains complete setup guides for using **Spec-Kit Plus with Claude Code**.
+This folder contains setup guides for using **Spec-Kit Plus with Claude Code**.
 
 ---
 
@@ -8,46 +8,55 @@ This folder contains complete setup guides for using **Spec-Kit Plus with Claude
 
 ### 🐍 With Python
 
-Install Spec-Kit Plus using Python and pip.
+Use Python + pip to install Spec-Kit Plus.
 
 ➡️ [WITH-PYTHON.md](WITH-PYTHON.md)
-
-Use this if you already have Python installed or want to learn the traditional Python-based setup.
 
 ---
 
 ### ⚡ Without Manually Installing Python
 
-Use `uv` / `uvx` to manage the required environment.
+Use uv/uvx to manage the environment.
 
 ➡️ [WITHOUT-PYTHON.md](WITHOUT-PYTHON.md)
 
-Use this if you don't want to manually install and manage Python.
+---
+
+# 🪟 Windows
+
+Claude Code supports Windows through:
+
+* WSL
+* Git Bash
+
+For the most compatible setup, WSL is a good option.
+
+Anthropic's current Claude Code documentation lists Windows support through WSL and Git for Windows/Git Bash.
 
 ---
 
-# 🔄 Workflow
+# 🔄 Spec-Driven Development
 
-After setup:
+After Spec-Kit Plus is initialized:
 
 ```text
-Claude Code
-     ↓
-Spec-Kit Plus
-     ↓
 /sp.constitution
-     ↓
+        ↓
 /sp.specify
-     ↓
-/sp.clarify
-     ↓
+        ↓
 /sp.plan
-     ↓
+        ↓
 /sp.tasks
-     ↓
-/sp.analyze
-     ↓
+        ↓
 /sp.implement
+```
+
+Optional:
+
+```text
+/sp.clarify
+/sp.analyze
+/sp.checklist
 ```
 
 ---
@@ -56,8 +65,8 @@ Spec-Kit Plus
 
 | Situation                               | Guide                               |
 | --------------------------------------- | ----------------------------------- |
-| I already use Python                    | [With Python](WITH-PYTHON.md)       |
-| I want pip installation                 | [With Python](WITH-PYTHON.md)       |
+| I already have Python                   | [With Python](WITH-PYTHON.md)       |
+| I want to use pip                       | [With Python](WITH-PYTHON.md)       |
 | I don't want to manually install Python | [Without Python](WITHOUT-PYTHON.md) |
 | I want to use uv/uvx                    | [Without Python](WITHOUT-PYTHON.md) |
 
