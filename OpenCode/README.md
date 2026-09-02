@@ -35,8 +35,6 @@ Other Windows installation methods include:
 * Docker
 * Releases
 
-Official OpenCode documentation: https://opencode.ai/docs
-
 ---
 
 # 🔄 Spec-Driven Development
