@@ -140,12 +140,6 @@ specifyplus init my-project --ai claude
 
 You can replace `my-project` with any project name you want.
 
-For example:
-
-```powershell
-specifyplus init ecommerce-app --ai claude
-```
-
 ---
 
 ## Step 8: Enter the Project
