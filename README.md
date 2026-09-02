@@ -13,7 +13,7 @@ This repository is designed for beginners and developers who want to learn **Spe
 
 ## 📚 What is Spec-Kit Plus?
 
-**Spec-Kit Plus** is a practical fork of GitHub's Spec Kit for Spec-Driven Development, with additional patterns and templates for building agentic AI systems.
+**Spec-Kit Plus** is a fork of GitHub's Spec Kit for Spec-Driven Development, with additional patterns and templates for building agentic AI systems.
 
 The project uses the `specifyplus` or `sp` CLI commands.
 
