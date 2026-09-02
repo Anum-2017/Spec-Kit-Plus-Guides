@@ -2,10 +2,10 @@
 
 Complete beginner-friendly setup guides for **Spec-Kit Plus** with:
 
-* 🤖 Claude Code
-* 💻 OpenCode
-* 🐍 Python + pip
-* ⚡ uv
+- 🤖 Claude Code
+- 💻 OpenCode
+- 🐍 Python + pip
+- ⚡ uv
 
 This repository is designed for beginners and developers who want to learn **Spec-Driven Development (SDD)** with AI coding agents.
 
@@ -35,7 +35,7 @@ Install Spec-Kit Plus using Python and pip.
 
 ### ⚡ Claude Code + uv
 
-Use uv/uvx so you do not have to manually install and manage Python.
+Use `uv` so you do not have to manually install and manage Python.
 
 ➡️ [Claude Code + uv](Claude-Code/WITHOUT-PYTHON.md)
 
@@ -51,7 +51,7 @@ Install Spec-Kit Plus using Python and pip.
 
 ### ⚡ OpenCode + uv
 
-Use uv so you do not have to manually install and manage Python.
+Use `uv` so you do not have to manually install and manage Python.
 
 ➡️ [OpenCode + uv](OpenCode/WITHOUT-PYTHON.md)
 
@@ -59,39 +59,17 @@ Use uv so you do not have to manually install and manage Python.
 
 # 📦 Spec-Kit Plus Installation Methods
 
-Spec-Kit Plus supports multiple installation approaches.
+Spec-Kit Plus supports two persistent installation approaches.
 
-## Method 1: Persistent Installation
+## Method 1: Python + pip
 
-Install the CLI once and use it from anywhere.
-
-### Using Python + pip
+Install the CLI using Python and pip:
 
 ```powershell
 python -m pip install specifyplus
 ```
 
-After installation, use:
-
-```powershell
-specifyplus --help
-```
-
-or:
-
-```powershell
-sp --help
-```
-
-### Using uv
-
-If you prefer to install the CLI through uv:
-
-```powershell
-uv tool install specifyplus
-```
-
-After installation:
+After installation, verify:
 
 ```powershell
 specifyplus --help
@@ -105,27 +83,27 @@ sp --help
 
 ---
 
-## Method 2: One-Time Usage with uv
+## Method 2: uv
 
-You can run Spec-Kit Plus with `uv` without installing the CLI permanently:
+If you prefer to install the CLI through `uv`:
 
 ```powershell
-uv specifyplus --help
+uv tool install specifyplus
 ```
 
-You can also initialize a new project directly:
+After installation, verify:
 
 ```powershell
-uv specifyplus init my-project --ai claude
+specifyplus --help
 ```
 
 or:
 
 ```powershell
-uv specifyplus init my-project --ai opencode
+sp --help
 ```
 
-This method is useful when you want to run Spec-Kit Plus without maintaining a permanent CLI installation.
+> **Note:** This guide uses a persistent `uv` installation with `uv tool install`. `uvx` is not required.
 
 ---
 
@@ -133,10 +111,10 @@ This method is useful when you want to run Spec-Kit Plus without maintaining a p
 
 This repository focuses on:
 
-| Agent       | Supported  |
-|-------------|------------|
-| Claude Code | ✅         |
-| OpenCode    | ✅         |
+| Agent | Supported |
+|---|---|
+| Claude Code | ✅ |
+| OpenCode | ✅ |
 
 Both agents can be selected during project initialization using the Spec-Kit Plus CLI.
 
@@ -168,9 +146,9 @@ Describe **what** you want to build and **why**.
 
 Focus on:
 
-* Requirements
-* User stories
-* Expected behavior
+- Requirements
+- User stories
+- Expected behavior
 
 Avoid defining the technical stack here.
 
@@ -180,11 +158,11 @@ Define the technical implementation plan.
 
 This is where you specify:
 
-* Framework
-* Database
-* Architecture
-* Libraries
-* Technical decisions
+- Framework
+- Database
+- Architecture
+- Libraries
+- Technical decisions
 
 ### `/sp.tasks`
 
@@ -250,7 +228,7 @@ These are **optional commands**, not mandatory steps in every project.
 
 # 🐍 Python Requirements
 
-For the Python-based setup, Spec-Kit Plus currently requires:
+For the Python-based setup, you need:
 
 ```text
 Python 3.11+
@@ -267,7 +245,7 @@ In this repository, **Without Python** means:
 
 > You do not manually install and manage Python yourself.
 
-`uv` provides the Python environment needed to run the tool.
+`uv` manages the Python environment needed to run the tool.
 
 It does **not** mean that Spec-Kit Plus itself has no Python dependency.
 
@@ -337,11 +315,11 @@ Claude Code / OpenCode
 
 ```text
 uv
- ↓
-uv tool install
- ↓
+   ↓
+uv tool install specifyplus
+   ↓
 Spec-Kit Plus
- ↓
+   ↓
 Claude Code / OpenCode
 ```
 
