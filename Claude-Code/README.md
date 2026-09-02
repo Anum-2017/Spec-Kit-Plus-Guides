@@ -16,7 +16,7 @@ Use Python + pip to install Spec-Kit Plus.
 
 ### ⚡ Without Manually Installing Python
 
-Use uv/uvx to manage the environment.
+Use uv to manage the environment.
 
 ➡️ [WITHOUT-PYTHON.md](WITHOUT-PYTHON.md)
 
@@ -68,7 +68,7 @@ Optional:
 | I already have Python                   | [With Python](WITH-PYTHON.md)       |
 | I want to use pip                       | [With Python](WITH-PYTHON.md)       |
 | I don't want to manually install Python | [Without Python](WITHOUT-PYTHON.md) |
-| I want to use uv/uvx                    | [Without Python](WITHOUT-PYTHON.md) |
+| I want to use uv                        | [Without Python](WITHOUT-PYTHON.md) |
 
 ---
 
