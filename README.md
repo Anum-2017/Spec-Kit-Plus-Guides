@@ -19,10 +19,6 @@ The project uses the `specifyplus` or `sp` CLI commands.
 
 Instead of asking an AI agent to immediately write code, you first define the project's requirements and technical plan, then generate tasks and implement them.
 
-### Official repository
-
-https://github.com/panaversity/spec-kit-plus
-
 ---
 
 # 🧭 Choose Your Setup
