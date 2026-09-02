@@ -5,7 +5,7 @@ Complete beginner-friendly setup guides for **Spec-Kit Plus** with:
 * 🤖 Claude Code
 * 💻 OpenCode
 * 🐍 Python + pip
-* ⚡ uv / uvx
+* ⚡ uv
 
 This repository is designed for beginners and developers who want to learn **Spec-Driven Development (SDD)** with AI coding agents.
 
@@ -33,11 +33,11 @@ Install Spec-Kit Plus using Python and pip.
 
 ➡️ [Claude Code + Python](Claude-Code/WITH-PYTHON.md)
 
-### ⚡ Claude Code + uv/uvx
+### ⚡ Claude Code + uv
 
 Use uv/uvx so you do not have to manually install and manage Python.
 
-➡️ [Claude Code + uv/uvx](Claude-Code/WITHOUT-PYTHON.md)
+➡️ [Claude Code + uv](Claude-Code/WITHOUT-PYTHON.md)
 
 ---
 
@@ -49,11 +49,11 @@ Install Spec-Kit Plus using Python and pip.
 
 ➡️ [OpenCode + Python](OpenCode/WITH-PYTHON.md)
 
-### ⚡ OpenCode + uv/uvx
+### ⚡ OpenCode + uv
 
-Use uv/uvx so you do not have to manually install and manage Python.
+Use uv so you do not have to manually install and manage Python.
 
-➡️ [OpenCode + uv/uvx](OpenCode/WITHOUT-PYTHON.md)
+➡️ [OpenCode + uv](OpenCode/WITHOUT-PYTHON.md)
 
 ---
 
@@ -105,24 +105,24 @@ sp --help
 
 ---
 
-## Method 2: One-Time Usage with uvx
+## Method 2: One-Time Usage with uv
 
-You can run Spec-Kit Plus with `uvx` without installing the CLI permanently:
+You can run Spec-Kit Plus with `uv` without installing the CLI permanently:
 
 ```powershell
-uvx specifyplus --help
+uv specifyplus --help
 ```
 
 You can also initialize a new project directly:
 
 ```powershell
-uvx specifyplus init my-project --ai claude
+uv specifyplus init my-project --ai claude
 ```
 
 or:
 
 ```powershell
-uvx specifyplus init my-project --ai opencode
+uv specifyplus init my-project --ai opencode
 ```
 
 This method is useful when you want to run Spec-Kit Plus without maintaining a permanent CLI installation.
@@ -133,8 +133,8 @@ This method is useful when you want to run Spec-Kit Plus without maintaining a p
 
 This repository focuses on:
 
-| Agent       | Supported |
-| ----------- | --------- |
+| Agent       | Supported  |
+|-------------|------------|
 | Claude Code | ✅         |
 | OpenCode    | ✅         |
 
@@ -338,7 +338,7 @@ Claude Code / OpenCode
 ```text
 uv
  ↓
-uvx / uv tool
+uv tool install
  ↓
 Spec-Kit Plus
  ↓
