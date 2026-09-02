@@ -5,121 +5,160 @@ Complete beginner-friendly setup guides for **Spec-Kit Plus** with:
 * 🤖 Claude Code
 * 💻 OpenCode
 * 🐍 Python + pip
-* ⚡ uv / uvx without manually installing Python
+* ⚡ uv / uvx
 
-This repository is designed for students and developers who want to learn **Spec-Driven Development (SDD)** with AI coding agents.
+This repository is designed for beginners and developers who want to learn **Spec-Driven Development (SDD)** with AI coding agents.
 
 ---
 
 ## 📚 What is Spec-Kit Plus?
 
-**Spec-Kit Plus** is a practical fork of GitHub's Spec Kit that helps developers follow a structured **Spec-Driven Development** workflow.
+**Spec-Kit Plus** is a practical fork of GitHub's Spec Kit for Spec-Driven Development, with additional patterns and templates for building agentic AI systems.
 
-Instead of immediately asking an AI agent to write code, you first define:
+The project uses the `specifyplus` or `sp` CLI commands.
 
-1. Project principles
-2. Requirements
-3. Technical plan
-4. Tasks
-5. Implementation
+Instead of asking an AI agent to immediately write code, you first define the project's requirements and technical plan, then generate tasks and implement them.
 
-This makes AI-assisted development more structured, predictable, and maintainable.
+Official repository:
 
-The current Spec-Kit Plus project supports multiple AI coding agents, including **Claude Code** and **OpenCode**.
+https://github.com/panaversity/spec-kit-plus
 
 ---
 
 # 🧭 Choose Your Setup
 
-There are two AI coding agents covered in this repository.
+This repository provides four setup options.
 
 ## 🤖 Claude Code
 
-Choose one:
+### 🐍 Claude Code + Python
 
-### 🐍 Claude + Python
-
-Use Python and pip to install Spec-Kit Plus.
+Install Spec-Kit Plus using Python and pip.
 
 ➡️ [Claude Code + Python](Claude-Code/WITH-PYTHON.md)
 
-### ⚡ Claude + uv/uvx
+### ⚡ Claude Code + uv/uvx
 
-Use uv/uvx so you don't have to manually install and manage Python.
+Use uv/uvx so you do not have to manually install Python.
 
-➡️ [Claude Code + Without Manual Python](Claude-Code/WITHOUT-PYTHON.md)
+➡️ [Claude Code + uv/uvx](Claude-Code/WITHOUT-PYTHON.md)
 
 ---
 
 ## 💻 OpenCode
 
-Choose one:
-
 ### 🐍 OpenCode + Python
 
-Use Python and pip to install Spec-Kit Plus.
+Install Spec-Kit Plus using Python and pip.
 
 ➡️ [OpenCode + Python](OpenCode/WITH-PYTHON.md)
 
 ### ⚡ OpenCode + uv/uvx
 
-Use uv/uvx so you don't have to manually install and manage Python.
+Use uv/uvx so you do not have to manually install Python.
 
-➡️ [OpenCode + Without Manual Python](OpenCode/WITHOUT-PYTHON.md)
+➡️ [OpenCode + uv/uvx](OpenCode/WITHOUT-PYTHON.md)
 
 ---
 
-# 📦 Installation Methods
+# 📦 Spec-Kit Plus Installation Methods
 
-Spec-Kit Plus currently supports persistent installation through:
+Spec-Kit Plus currently supports two main approaches.
+
+## Method 1: Persistent Installation
+
+Install the CLI once and use it from anywhere.
+
+### Using pip
 
 ```powershell
 pip install specifyplus
 ```
 
-or:
+### Using uv
 
 ```powershell
 uv tool install specifyplus
 ```
 
-It also supports one-time execution through:
+After installation, use:
 
 ```powershell
-uvx specifyplus
+specifyplus --help
 ```
 
-The `specifyplus` and `sp` commands can both be used.
+or:
+
+```powershell
+sp --help
+```
+
+The current Spec-Kit Plus README documents both `pip install specifyplus` and `uv tool install specifyplus`.
+
+---
+
+## Method 2: One-Time Usage
+
+You can run Spec-Kit Plus with `uvx` without installing the CLI permanently:
+
+```powershell
+uvx specifyplus --help
+```
+
+For example:
+
+```powershell
+uvx specifyplus init my-project --ai claude
+```
+
+or:
+
+```powershell
+uvx specifyplus init my-project --ai opencode
+```
+
+The current project documents `uvx specifyplus` and `uvx sp` for one-time usage.
+
+---
+
+# 🤖 Supported AI Agents
+
+Spec-Kit Plus supports multiple AI coding agents.
+
+This repository focuses on:
+
+| Agent       | Supported |
+| ----------- | --------- |
+| Claude Code | ✅         |
+| OpenCode    | ✅         |
+
+The Spec-Kit Plus CLI currently includes both `claude` and `opencode` as supported AI options.
 
 ---
 
 # 🔄 Spec-Driven Development Workflow
 
-After setting up Spec-Kit Plus, the typical workflow is:
+The **core workflow** is:
 
 ```text
 /sp.constitution
         ↓
 /sp.specify
         ↓
-/sp.clarify
-        ↓
 /sp.plan
         ↓
 /sp.tasks
         ↓
-/sp.analyze
-        ↓
 /sp.implement
 ```
 
-### 1️⃣ `/sp.constitution`
+### `/sp.constitution`
 
-Defines the project's principles and development guidelines.
+Create or update the project's governing principles and development guidelines.
 
-### 2️⃣ `/sp.specify`
+### `/sp.specify`
 
-Defines what you want to build.
+Describe **what** you want to build and **why**.
 
 Focus on:
 
@@ -127,17 +166,11 @@ Focus on:
 * User stories
 * Expected behavior
 
-Do not focus on implementation details here.
+Avoid defining the technical stack here.
 
-### 3️⃣ `/sp.clarify`
+### `/sp.plan`
 
-Identifies and resolves unclear or underspecified requirements.
-
-This is recommended before `/sp.plan`.
-
-### 4️⃣ `/sp.plan`
-
-Defines the technical implementation plan.
+Define the technical implementation plan.
 
 This is where you specify:
 
@@ -147,90 +180,121 @@ This is where you specify:
 * Libraries
 * Technical decisions
 
-### 5️⃣ `/sp.tasks`
+### `/sp.tasks`
 
-Breaks the implementation plan into actionable development tasks.
+Break the technical plan into actionable development tasks.
 
-### 6️⃣ `/sp.analyze`
+### `/sp.implement`
 
-Checks consistency and coverage across the specification, plan, and tasks.
+Execute the generated tasks and build the feature.
 
-### 7️⃣ `/sp.implement`
-
-Executes the generated tasks and builds the project.
-
-These commands are part of the current Spec-Kit Plus workflow.
+These are the core commands documented by the current Spec-Kit Plus project.
 
 ---
 
-# 🛠️ Supported AI Agents
+# 🧪 Optional Quality Commands
 
-Spec-Kit Plus currently supports many AI coding agents, including:
+Spec-Kit Plus also provides additional commands.
 
-| AI Agent       | Support |
-| -------------- | ------- |
-| Claude Code    | ✅       |
-| OpenCode       | ✅       |
-| Gemini CLI     | ✅       |
-| GitHub Copilot | ✅       |
-| Cursor         | ✅       |
-| Qwen Code      | ✅       |
-| Codex CLI      | ✅       |
-| Windsurf       | ✅       |
-| Kilo Code      | ✅       |
-| Roo Code       | ✅       |
-| Amp            | ✅       |
-| Qoder          | ✅       |
+## `/sp.clarify`
 
-This repository focuses specifically on **Claude Code** and **OpenCode**.
+Use this to clarify underspecified requirements.
+
+Recommended before:
+
+```text
+/sp.plan
+```
 
 ---
 
-# 💻 Requirements
+## `/sp.analyze`
 
-For the Python-based method:
+Use this to analyze consistency and coverage between:
+
+```text
+Specification
+      +
+Plan
+      +
+Tasks
+```
+
+Recommended after:
+
+```text
+/sp.tasks
+```
+
+and before:
+
+```text
+/sp.implement
+```
+
+---
+
+## `/sp.checklist`
+
+Generate custom quality checklists for requirements completeness and consistency.
+
+These are **optional commands**, not mandatory steps in every project.
+
+---
+
+# 🐍 Python Requirements
+
+For the Python-based setup, Spec-Kit Plus currently requires:
 
 ```text
 Python 3.11+
 Git
 ```
 
-For the uv/uvx method:
-
-```text
-uv
-Git
-```
-
-You will also need the AI coding agent you want to use:
-
-```text
-Claude Code
-```
-
-or:
-
-```text
-OpenCode
-```
-
-Spec-Kit Plus currently lists Python 3.11+ and Git among its requirements.
+The AI coding agent must also be installed separately.
 
 ---
 
-# ⚠️ Important: "Without Python"
+# ⚡ What Does "Without Python" Mean?
 
-The **Without Python** guides mean:
+In this repository, **Without Python** means:
 
-> You don't have to manually install and manage Python yourself.
+> You do not manually install and manage Python yourself.
 
-`uv` manages the required Python environment.
+`uv` provides the Python environment needed to run the tool.
 
-So this method is better described as:
+It does **not** mean that Spec-Kit Plus itself has no Python dependency.
 
-**Without manually installing Python**
+---
 
-rather than literally "Python is not used."
+# 🪟 Windows Notes
+
+## Claude Code
+
+Claude Code supports Windows through:
+
+* WSL
+* Git Bash
+
+Anthropic's current documentation lists Windows support through WSL or Git for Windows/Git Bash.
+
+---
+
+## OpenCode
+
+OpenCode's official documentation recommends **WSL on Windows** for the best experience.
+
+Other Windows installation options include:
+
+```text
+npm
+Chocolatey
+Scoop
+Mise
+Docker
+```
+
+OpenCode's official documentation specifically recommends WSL for Windows.
 
 ---
 
@@ -254,11 +318,11 @@ Spec-Kit-Plus-Guides/
 
 ---
 
-# 🎯 Recommended Path for Beginners
+# 🎯 Recommended Beginner Path
 
-If you are completely new:
+If you are learning Spec-Kit Plus for the first time:
 
-### Option 1
+### Option 1: Python
 
 ```text
 Python
@@ -267,45 +331,36 @@ pip
    ↓
 Spec-Kit Plus
    ↓
-Claude Code
+Claude Code / OpenCode
 ```
 
-Start here:
-
-➡️ [Claude Code + Python](Claude-Code/WITH-PYTHON.md)
-
-### Option 2
-
-If you prefer `uv`:
+### Option 2: uv
 
 ```text
 uv
+ ↓
+uvx / uv tool
  ↓
 Spec-Kit Plus
  ↓
 Claude Code / OpenCode
 ```
 
-Start here:
-
-➡️ [Claude Code + Without Manual Python](Claude-Code/WITHOUT-PYTHON.md)
-
 ---
 
-# 📖 Official Resources
+# 🔗 Official Resources
 
-* [Spec-Kit Plus GitHub Repository](https://github.com/panaversity/spec-kit-plus)
-* [Spec-Kit Plus Documentation](https://github.com/panaversity/spec-kit-plus)
+* [Spec-Kit Plus](https://github.com/panaversity/spec-kit-plus)
+* [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
+* [OpenCode Documentation](https://opencode.ai/docs)
 * [Python](https://www.python.org/)
+* [uv Documentation](https://docs.astral.sh/uv/)
 * [Git](https://git-scm.com/)
-* [uv](https://docs.astral.sh/uv/)
 
 ---
 
-# ⭐ Goal of This Repository
+# ⭐ Goal
 
-The goal is to make Spec-Kit Plus installation simple enough for beginners while keeping the setup aligned with the current project documentation.
+The goal of this repository is to provide simple, current, and beginner-friendly instructions for setting up Spec-Kit Plus with Claude Code and OpenCode.
 
-Happy Building! 🚀
-
-**Learn → Specify → Plan → Build → Validate**
+**Learn → Specify → Plan → Task → Implement 🚀**
