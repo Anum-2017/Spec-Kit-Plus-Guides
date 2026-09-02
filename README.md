@@ -103,7 +103,7 @@ or:
 sp --help
 ```
 
-> **Note:** This guide uses a persistent `uv` installation with `uv tool install`. `uvx` is not required.
+> **Note:** This guide uses a persistent `uv` installation with `uv tool install`.
 
 ---
 
@@ -329,4 +329,4 @@ Claude Code / OpenCode
 
 The goal of this repository is to provide simple, current, and beginner-friendly instructions for setting up Spec-Kit Plus with Claude Code and OpenCode.
 
-**Learn → Specify → Plan → Task → Implement 🚀**
+**Learn → Specify → Plan → Tasks → Implement 🚀**
