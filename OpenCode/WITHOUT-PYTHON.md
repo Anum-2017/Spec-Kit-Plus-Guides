@@ -4,7 +4,7 @@
 
 This guide explains how to use **Spec-Kit Plus with OpenCode without manually installing Python**.
 
-> **Important:** "Without Python" means you don't manually install and manage Python yourself. `uv` manages the required Python environment.
+> **Important:** "Without Python" means you don't manually install/manage Python yourself. `uv` provides the Python environment needed by the CLI.
 
 ---
 
@@ -12,7 +12,6 @@ This guide explains how to use **Spec-Kit Plus with OpenCode without manually in
 
 You need:
 
-* Windows
 * uv
 * Git
 * OpenCode
@@ -20,17 +19,28 @@ You need:
 
 ---
 
+# 🪟 Windows Recommendation
+
+OpenCode's official documentation recommends **WSL on Windows** for the best performance and compatibility.
+
+Official documentation:
+
+https://opencode.ai/docs
+
+---
+
 # 1️⃣ Install uv
 
-Open **Windows PowerShell** and run:
+Open PowerShell and run:
 
 ```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-After installation, close PowerShell.
+After installation:
 
-Open a new PowerShell window.
+1. Close PowerShell.
+2. Open a new PowerShell window.
 
 ---
 
@@ -66,7 +76,21 @@ git --version
 
 # 4️⃣ Install OpenCode
 
-Install OpenCode using its current official installation method.
+## Recommended: WSL on Windows
+
+If you are on Windows, use WSL for OpenCode.
+
+OpenCode officially recommends WSL for Windows.
+
+---
+
+## Alternative: npm
+
+If you already have Node.js/npm:
+
+```powershell
+npm install -g opencode-ai
+```
 
 Verify:
 
@@ -74,7 +98,7 @@ Verify:
 opencode --version
 ```
 
-Spec-Kit Plus currently supports `opencode` as an AI coding agent.
+The official OpenCode documentation lists npm as a Windows installation option.
 
 ---
 
@@ -86,7 +110,7 @@ Run:
 uvx specifyplus --help
 ```
 
-The current Spec-Kit Plus documentation supports one-time CLI usage with `uvx`.
+The current Spec-Kit Plus README supports one-time usage through `uvx`.
 
 ---
 
@@ -98,7 +122,7 @@ Go to your desired directory:
 cd Desktop
 ```
 
-Run:
+Then run:
 
 ```powershell
 uvx specifyplus init my-opencode-project --ai opencode
@@ -130,51 +154,61 @@ Use:
 uvx specifyplus init my-opencode-project --ai opencode --ignore-agent-tools
 ```
 
-The current CLI supports `--ignore-agent-tools` to skip AI-agent detection.
+The current Spec-Kit Plus CLI supports `--ignore-agent-tools`.
 
 ---
 
-# 🚀 Spec-Driven Development Workflow
+# 🚀 Spec-Driven Development
 
-Inside OpenCode:
-
-### 1. Constitution
+## 1. Constitution
 
 ```text
 /sp.constitution
 ```
 
-### 2. Specification
+---
+
+## 2. Specification
 
 ```text
 /sp.specify
 ```
 
-### 3. Clarification
+---
+
+## 3. Clarify - Optional
 
 ```text
 /sp.clarify
 ```
 
-### 4. Technical Plan
+---
+
+## 4. Plan
 
 ```text
 /sp.plan
 ```
 
-### 5. Tasks
+---
+
+## 5. Tasks
 
 ```text
 /sp.tasks
 ```
 
-### 6. Analysis
+---
+
+## 6. Analyze - Optional
 
 ```text
 /sp.analyze
 ```
 
-### 7. Implementation
+---
+
+## 7. Implement
 
 ```text
 /sp.implement
@@ -185,26 +219,18 @@ Inside OpenCode:
 # 🔄 Complete Workflow
 
 ```text
-uv
- ↓
-uvx
- ↓
-Spec-Kit Plus
- ↓
-OpenCode
- ↓
 /sp.constitution
- ↓
+        ↓
 /sp.specify
- ↓
-/sp.clarify
- ↓
+        ↓
+/sp.clarify       ← optional
+        ↓
 /sp.plan
- ↓
+        ↓
 /sp.tasks
- ↓
-/sp.analyze
- ↓
+        ↓
+/sp.analyze       ← optional
+        ↓
 /sp.implement
 ```
 
@@ -224,23 +250,9 @@ uvx specifyplus --help
 
 ---
 
-# ⚠️ Why uv/uvx?
-
-With `uvx`, you can run Spec-Kit Plus without permanently installing the CLI.
-
-For example:
-
-```powershell
-uvx specifyplus --help
-```
-
-The current Spec-Kit Plus README documents `uvx specifyplus` as the one-time usage method.
-
----
-
 # 🛠️ Troubleshooting
 
-## uv not recognized
+## `uv` is not recognized
 
 Close PowerShell and open it again.
 
@@ -252,7 +264,7 @@ uv --version
 
 ---
 
-## uvx not recognized
+## `uvx` is not recognized
 
 Check:
 
@@ -260,29 +272,49 @@ Check:
 uv --version
 ```
 
-If necessary, restart Windows so the updated PATH is loaded.
+If necessary, restart Windows so PATH changes are loaded.
 
 ---
 
-## OpenCode not recognized
+## OpenCode is not recognized
 
-Run:
+Check:
 
 ```powershell
 opencode --version
 ```
 
-Complete the OpenCode installation if necessary.
+If using npm:
+
+```powershell
+npm install -g opencode-ai
+```
+
+---
+
+## OpenCode has Windows compatibility issues
+
+Use WSL.
+
+The official OpenCode documentation recommends WSL for Windows.
 
 ---
 
 ## Spec-Kit Plus cannot detect OpenCode
 
-Run:
+Use:
 
 ```powershell
 uvx specifyplus init my-opencode-project --ai opencode --ignore-agent-tools
 ```
+
+---
+
+# ⚠️ Important Note
+
+This guide avoids a **manual Python installation**, but Python is still used internally by the Spec-Kit Plus CLI environment.
+
+The benefit is that `uv` manages that environment for you.
 
 ---
 
@@ -292,13 +324,13 @@ You now have:
 
 ```text
 uv
- +
+ ↓
 uvx
- +
+ ↓
 Spec-Kit Plus
- +
+ ↓
 OpenCode
- =
+ ↓
 Spec-Driven Development
 ```
 
