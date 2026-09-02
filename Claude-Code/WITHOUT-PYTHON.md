@@ -1,50 +1,60 @@
-# 🤖 Spec-Kit Plus + Claude Code
+# Spec-Kit Plus + Claude Code
 
-## ⚡ Setup with uv / uvx
+## Installation without Manually Installing Python
 
-This guide explains how to use **Spec-Kit Plus with Claude Code without manually installing Python**.
+This guide explains how to use **Spec-Kit Plus with Claude Code using `uv` and `uvx`**.
 
-> **Important:** This does not mean Python is absent. `uv` manages the Python environment for you.
+> **Important:** "Without Python" means you do not need to manually install and manage Python yourself. `uv` manages the Python environment needed by the tool.
 
 ---
 
-# 📋 Requirements
+## 📋 Requirements
 
 You need:
 
-* Windows
-* uv
 * Git
-* Node.js 18+
+* uv
 * Claude Code
-* Internet connection
+
+You do **not** need to manually install Python.
 
 ---
 
-# 1️⃣ Install uv
+## Step 1: Install Git
 
-Open PowerShell and run:
+Check whether Git is installed:
+
+```powershell
+git --version
+```
+
+If Git is not installed, download it from:
+
+https://git-scm.com/downloads
+
+---
+
+## Step 2: Install uv
+
+On Windows PowerShell, run:
 
 ```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-After installation:
-
-1. Close PowerShell.
-2. Open a new PowerShell window.
+After installation, close PowerShell and open a new terminal.
 
 ---
 
-# 2️⃣ Verify uv
+## Step 3: Verify uv
 
-Run:
+Check uv:
 
 ```powershell
 uv --version
 ```
 
-Then:
+Check uvx:
 
 ```powershell
 uvx --version
@@ -52,147 +62,137 @@ uvx --version
 
 ---
 
-# 3️⃣ Install Git
+## Step 4: Install Claude Code
 
-Download:
-
-https://git-scm.com/downloads
-
-Verify:
-
-```powershell
-git --version
-```
-
----
-
-# 4️⃣ Install Node.js
-
-Claude Code requires Node.js 18+.
-
-Download:
-
-https://nodejs.org/
-
-Verify:
-
-```powershell
-node --version
-```
-
-and:
-
-```powershell
-npm --version
-```
-
----
-
-# 5️⃣ Install Claude Code
-
-Run:
+Install Claude Code:
 
 ```powershell
 npm install -g @anthropic-ai/claude-code
 ```
 
-Then verify:
+Verify:
 
 ```powershell
 claude --version
 ```
 
-Anthropic currently documents npm as a standard Claude Code installation method.
+If `claude` is not recognized, restart your terminal.
 
 ---
 
-# 6️⃣ Test Spec-Kit Plus
+## Step 5: Test Spec-Kit Plus
 
-You do not need to install Spec-Kit Plus permanently.
-
-Run:
+You can run Spec-Kit Plus directly through `uvx` without permanently installing it:
 
 ```powershell
 uvx specifyplus --help
 ```
 
-The current Spec-Kit Plus README documents `uvx specifyplus` for one-time usage.
+If the help menu appears, Spec-Kit Plus is available.
 
 ---
 
-# 7️⃣ Create a New Project
+## Step 6: Create a New Project
 
-Go to the location where you want the project:
+Move to the location where you want your project:
 
 ```powershell
 cd Desktop
 ```
 
-Then:
+Create a new project:
 
 ```powershell
-uvx specifyplus init my-ai-project --ai claude
+uvx specifyplus init my-project --ai claude
+```
+
+You can replace `my-project` with any project name.
+
+---
+
+## Step 7: Enter the Project
+
+```powershell
+cd my-project
 ```
 
 ---
 
-# 8️⃣ Enter the Project
-
-```powershell
-cd my-ai-project
-```
-
----
-
-# 9️⃣ Start Claude Code
+## Step 8: Start Claude Code
 
 ```powershell
 claude
 ```
 
-Complete the authentication shown by Claude Code.
+---
+
+## Step 9: If Claude Code Detection Fails
+
+If Spec-Kit Plus cannot detect the Claude Code tools automatically, use:
+
+```powershell
+uvx specifyplus init my-project --ai claude --ignore-agent-tools
+```
+
+Then enter the project:
+
+```powershell
+cd my-project
+```
+
+And start Claude:
+
+```powershell
+claude
+```
 
 ---
 
-# 🔄 Spec-Driven Development
+# 🚀 Spec-Driven Development Workflow
 
-Use:
+Inside Claude Code:
+
+## 1. Constitution
 
 ```text
 /sp.constitution
 ```
 
-then:
+## 2. Specify
 
 ```text
 /sp.specify
 ```
 
-Optional:
+## 3. Clarify
 
 ```text
 /sp.clarify
 ```
 
-Then:
+Optional, but useful when requirements are unclear.
+
+## 4. Plan
 
 ```text
 /sp.plan
 ```
 
-Then:
+## 5. Tasks
 
 ```text
 /sp.tasks
 ```
 
-Optional:
+## 6. Analyze
 
 ```text
 /sp.analyze
 ```
 
-Finally:
+Optional, but recommended before implementation.
+
+## 7. Implement
 
 ```text
 /sp.implement
@@ -200,99 +200,66 @@ Finally:
 
 ---
 
-# 🧪 Verification
+# 🔄 Complete Workflow
 
-Run:
-
-```powershell
-uv --version
-uvx --version
-git --version
-node --version
-npm --version
-claude --version
-uvx specifyplus --help
+```text
+/sp.constitution
+        ↓
+/sp.specify
+        ↓
+/sp.clarify       ← Optional
+        ↓
+/sp.plan
+        ↓
+/sp.tasks
+        ↓
+/sp.analyze       ← Optional / Recommended
+        ↓
+/sp.implement
 ```
 
 ---
 
-# 🛠️ Troubleshooting
+# ⚡ Quick Setup
 
-## `uv` is not recognized
+```powershell
+git --version
 
-Close PowerShell and open it again.
+uv --version
+uvx --version
+
+npm install -g @anthropic-ai/claude-code
+claude --version
+
+uvx specifyplus --help
+
+cd Desktop
+uvx specifyplus init my-project --ai claude
+
+cd my-project
+claude
+```
 
 Then:
 
-```powershell
-uv --version
-```
-
----
-
-## `uvx` is not recognized
-
-Check:
-
-```powershell
-uv --version
-```
-
-If necessary, restart Windows so the PATH changes are loaded.
-
----
-
-## `claude` is not recognized
-
-Check:
-
-```powershell
-npm --version
-```
-
-Then reinstall:
-
-```powershell
-npm install -g @anthropic-ai/claude-code
-```
-
----
-
-## Spec-Kit Plus cannot detect Claude
-
-Use:
-
-```powershell
-uvx specifyplus init my-ai-project --ai claude --ignore-agent-tools
-```
-
----
-
-# 🪟 Windows Recommendation
-
-For Claude Code on Windows, Anthropic supports:
-
-* WSL
-* Git Bash
-
-If native PowerShell causes issues, try Claude Code from WSL or Git Bash.
-
----
-
-# ✅ Done!
-
-You now have:
-
 ```text
-uv
- ↓
-uvx
- ↓
-Spec-Kit Plus
- ↓
-Claude Code
- ↓
-Spec-Driven Development
+/sp.constitution
+/sp.specify
+/sp.clarify
+/sp.plan
+/sp.tasks
+/sp.analyze
+/sp.implement
 ```
 
-without manually installing Python.
+---
+
+## Important
+
+This method does **not require you to manually install Python**.
+
+`uv`/`uvx` manages the Python environment required to run Spec-Kit Plus.
+
+For the Python + pip method, see:
+
+**`WITH-PYTHON.md`**
