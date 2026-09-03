@@ -2,10 +2,10 @@
 
 Complete beginner-friendly setup guides for **Spec-Kit Plus** with:
 
-- 🤖 Claude Code
-- 💻 OpenCode
-- 🐍 Python + pip
-- ⚡ uv
+* 🤖 Claude Code
+* 💻 OpenCode
+* 🐍 Python + pip
+* ⚡ uv
 
 This repository is designed for beginners and developers who want to learn **Spec-Driven Development (SDD)** with AI coding agents.
 
@@ -13,7 +13,7 @@ This repository is designed for beginners and developers who want to learn **Spe
 
 ## 📚 What is Spec-Kit Plus?
 
-**Spec-Kit Plus** is a fork of GitHub's Spec Kit for Spec-Driven Development, with additional patterns and templates for building agentic AI systems.
+**Spec-Kit Plus** is a practical fork of GitHub's Spec Kit for **Spec-Driven Development**, with additional patterns and templates for building agentic AI systems.
 
 The project uses the `specifyplus` or `sp` CLI commands.
 
@@ -111,10 +111,10 @@ sp --help
 
 This repository focuses on:
 
-| Agent | Supported |
-|---|---|
-| Claude Code | ✅ |
-| OpenCode | ✅ |
+| Agent       | Supported |
+| ----------- | --------- |
+| Claude Code | ✅         |
+| OpenCode    | ✅         |
 
 Both agents can be selected during project initialization using the Spec-Kit Plus CLI.
 
@@ -146,9 +146,9 @@ Describe **what** you want to build and **why**.
 
 Focus on:
 
-- Requirements
-- User stories
-- Expected behavior
+* Requirements
+* User stories
+* Expected behavior
 
 Avoid defining the technical stack here.
 
@@ -158,11 +158,11 @@ Define the technical implementation plan.
 
 This is where you specify:
 
-- Framework
-- Database
-- Architecture
-- Libraries
-- Technical decisions
+* Framework
+* Database
+* Architecture
+* Libraries
+* Technical decisions
 
 ### `/sp.tasks`
 
