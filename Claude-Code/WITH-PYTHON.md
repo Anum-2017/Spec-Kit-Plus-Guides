@@ -20,7 +20,7 @@ You need:
 
 Download Python from:
 
-https://www.python.org/downloads/
+[Download Python](https://www.python.org/downloads/)
 
 ### Windows
 
@@ -303,15 +303,15 @@ Then inside Claude Code:
 
 ## ⚠️ Important: Spec-Kit Plus vs GitHub Spec Kit
 
-This guide specifically documents **Spec-Kit Plus** and its `specifyplus` / `sp` CLI commands.
+This guide specifically documents **Panaversity Spec-Kit Plus**, which uses the `specifyplus` / `sp` CLI commands and `/sp.*` slash commands.
 
-Do not confuse these commands with the current official GitHub **Spec Kit** CLI, which uses different command naming and initialization syntax.
+Do not confuse these commands with the upstream GitHub **Spec Kit** CLI, which uses different CLI and slash-command naming.
 
 ---
 
 ## Python Method
 
-This method requires Python to be manually installed and uses pip to install Spec-Kit Plus.
+This method requires you to manually install Python and uses `pip` to install Spec-Kit Plus.
 
 If you do not want to manually install or manage Python, see:
 
