@@ -248,17 +248,17 @@ Execute the generated tasks and build the project.
 
 ```text
 /sp.constitution
-        ↓
+      ↓
 /sp.specify
-        ↓
+      ↓
 /sp.clarify       ← Optional
-        ↓
+      ↓
 /sp.plan
-        ↓
+      ↓
 /sp.tasks
-        ↓
+      ↓
 /sp.analyze       ← Optional / Recommended
-        ↓
+      ↓
 /sp.implement
 ```
 
