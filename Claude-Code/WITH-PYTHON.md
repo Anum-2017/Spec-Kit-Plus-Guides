@@ -52,7 +52,7 @@ You should see the installed Python and pip versions.
 
 ## Step 3: Install Git
 
-Check Git:
+Check whether Git is installed:
 
 ```powershell
 git --version
@@ -98,13 +98,13 @@ Spec-Kit Plus also provides the `sp` command as a shorter alias.
 
 ## Step 6: Verify Spec-Kit Plus
 
-Check the version:
+Check the installed version:
 
 ```powershell
 specifyplus --version
 ```
 
-You can also run:
+You can also use:
 
 ```powershell
 sp --version
@@ -300,10 +300,18 @@ Then inside Claude Code:
 
 ---
 
-## Important
+## ⚠️ Important: Spec-Kit Plus vs GitHub Spec Kit
+
+This guide specifically documents **Spec-Kit Plus** and its `specifyplus` / `sp` CLI commands.
+
+Do not confuse these commands with the current official GitHub **Spec Kit** CLI, which uses different command naming and initialization syntax.
+
+---
+
+## Python Method
 
 This method requires Python to be manually installed and uses pip to install Spec-Kit Plus.
 
-If you do not want to manually install or manage Python, use:
+If you do not want to manually install or manage Python, see:
 
 `WITHOUT-PYTHON.md`
