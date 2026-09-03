@@ -12,6 +12,7 @@ You need:
 
 * Python 3.11 or higher
 * Git
+* Node.js and npm
 * OpenCode
 
 ---
