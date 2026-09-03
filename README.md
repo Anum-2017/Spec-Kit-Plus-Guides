@@ -13,11 +13,13 @@ This repository is designed for beginners and developers who want to learn **Spe
 
 ## 📚 What is Spec-Kit Plus?
 
-**Spec-Kit Plus** is a practical fork of GitHub's Spec Kit for **Spec-Driven Development**, with additional patterns and templates for building agentic AI systems.
+**Spec-Kit Plus** is a structured AI-development framework that helps you and your coding AI agents work in a more organized and reliable way. Instead of randomly prompting the AI, it guides you step by step:
 
-The project uses the `specifyplus` or `sp` CLI commands.
+**Specifications → Plans → Tasks → Implementation**
 
-Instead of asking an AI agent to immediately write code, you first define the project's requirements and technical plan, then generate tasks and implement them.
+It ensures that projects are clear, well-planned, and easy to manage. With Spec-Kit Plus, you define exactly what you want, break it into small actionable tasks, and implement them properly.
+
+This framework helps you and your AI coding agents work more like a real development team, making AI-assisted development faster, smarter, and less messy.
 
 ---
 
@@ -322,11 +324,3 @@ Spec-Kit Plus
    ↓
 Claude Code / OpenCode
 ```
-
----
-
-# ⭐ Goal
-
-The goal of this repository is to provide simple, current, and beginner-friendly instructions for setting up Spec-Kit Plus with Claude Code and OpenCode.
-
-**Learn → Specify → Plan → Tasks → Implement 🚀**
