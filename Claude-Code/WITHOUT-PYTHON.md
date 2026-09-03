@@ -78,7 +78,7 @@ claude --version
 
 If `claude` is not recognized, close and reopen your terminal.
 
-> **Alternative:** Claude Code can also be installed through npm. If you use npm, make sure the required Node.js version is installed.
+> **Note:** This guide uses the official Claude Code installer. You do not need to install Claude Code through npm.
 
 ---
 
